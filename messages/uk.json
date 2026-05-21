@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "title": "MaOs AI Agency — AI automation systems for business",
+    "description": "Будуємо AI-системи під ключ. Автоматизуємо продажі, заявки, CRM та рутинні процеси."
+  },
+  "nav": {
+    "home": "Головна",
+    "services": "Послуги",
+    "about": "Про нас",
+    "cta": "Зв'язатися",
+    "language": "Мова"
+  },
+  "hero": {
+    "badge": "AI Automation Agency",
+    "headlineLine1": "Будуємо",
+    "headlineHighlight": "AI-системи",
+    "headlineLine2": "під ключ",
+    "subheadline": "Автоматизуємо продажі, заявки, комунікацію, CRM та рутинні процеси за допомогою AI.",
+    "cta": "Написати в Telegram",
+    "secondary": "Наші послуги",
+    "trust": {
+      "uptime": { "value": "99.9%", "label": "uptime систем" },
+      "speed": { "value": "< 2 хв", "label": "час відповіді AI" },
+      "custom": { "value": "100%", "label": "під ваш бізнес" }
+    },
+    "scroll": "Дізнатись більше",
+    "floatingCards": {
+      "crm": { "title": "CRM Sync", "subtitle": "авто-sync" },
+      "aiReply": { "title": "AI Reply", "subtitle": "online" },
+      "leads": { "title": "Lead Bot", "subtitle": "+24 / год" },
+      "analytics": { "title": "Analytics", "subtitle": "realtime" },
+      "neural": { "title": "Neural AI", "subtitle": "active" }
+    }
+  },
+  "stats": {
+    "projects": "проєктів",
+    "automations": "автоматизацій",
+    "hours": "годин економії",
+    "satisfaction": "задоволених клієнтів"
+  },
+  "features": {
+    "title": "Чому MaOs",
+    "subtitle": "Преміальні AI-рішення для бізнесу, які працюють з першого дня",
+    "items": {
+      "turnkey": {
+        "title": "Під ключ",
+        "description": "Від аудиту процесів до запуску та підтримки — повний цикл розробки AI-систем."
+      },
+      "integration": {
+        "title": "Інтеграції",
+        "description": "CRM, Telegram, email, таблиці, API — з'єднуємо ваш стек в єдину автоматизацію."
+      },
+      "scale": {
+        "title": "Масштаб",
+        "description": "Архітектура, яка росте разом із бізнесом: від MVP до enterprise-потоків."
+      },
+      "support": {
+        "title": "Підтримка 24/7",
+        "description": "Моніторинг, оновлення моделей та швидка реакція на зміни в процесах."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "AI Command Center",
+    "subtitle": "Ваш бізнес під контролем в реальному часі",
+    "leads": "Нові заявки",
+    "processed": "Оброблено AI",
+    "response": "Середній час відповіді",
+    "uptime": "Uptime систем"
+  },
+  "flow": {
+    "title": "Як працює автоматизація",
+    "subtitle": "Від заявки до результату — без ручної рутини",
+    "steps": {
+      "capture": {
+        "title": "Збір даних",
+        "description": "Заявки з сайту, Telegram, форм та CRM потрапляють в єдиний потік."
+      },
+      "process": {
+        "title": "AI-обробка",
+        "description": "Класифікація, відповіді, призначення менеджеру та оновлення статусів."
+      },
+      "action": {
+        "title": "Дія",
+        "description": "Листи, повідомлення, задачі в CRM та звіти — автоматично."
+      },
+      "insight": {
+        "title": "Аналітика",
+        "description": "Дашборди, метрики та рекомендації для оптимізації процесів."
+      }
+    }
+  },
+  "cta": {
+    "title": "Готові автоматизувати бізнес?",
+    "subtitle": "Обговоримо ваші процеси та запропонуємо рішення під ключ.",
+    "button": "Написати в Telegram"
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Послуги — MaOs AI Agency",
+      "description": "AI automation systems: чат-боти, CRM, продажі, інтеграції та кастомні AI-пайплайни."
+    },
+    "hero": {
+      "badge": "Services",
+      "title": "Послуги",
+      "titleHighlight": "AI-автоматизації",
+      "subtitle": "Основна послуга: AI automation systems for business. Проєктуємо, впроваджуємо та супроводжуємо."
+    },
+    "core": {
+      "badge": "Core service",
+      "title": "AI automation systems for business",
+      "description": "Комплексні AI-системи під ключ: від збору заявок до CRM, комунікації та аналітики в одному потоці.",
+      "features": {
+        "f1": "Аудит процесів та roadmap",
+        "f2": "Інтеграція з вашим стеком",
+        "f3": "Запуск MVP за тижні",
+        "f4": "Підтримка після релізу"
+      }
+    },
+    "gridTitle": "Напрямки автоматизації",
+    "gridSubtitle": "Обирайте готовий модуль або комбінуйте кілька — збираємо систему під ваш бізнес.",
+    "items": {
+      "sales": {
+        "title": "Автоматизація продажів",
+        "description": "AI-воронки, кваліфікація лідів, follow-up та інтеграція з CRM для зростання конверсії.",
+        "tags": ["CRM", "Leads", "Follow-up"]
+      },
+      "leads": {
+        "title": "Обробка заявок",
+        "description": "Миттєва відповідь, маршрутизація, нагадування та статуси без ручного введення.",
+        "tags": ["Forms", "Telegram", "Email"]
+      },
+      "communication": {
+        "title": "Комунікація",
+        "description": "Telegram-боти, email-асистенти та єдиний inbox для команди та клієнтів.",
+        "tags": ["Bots", "Inbox", "AI Reply"]
+      },
+      "crm": {
+        "title": "CRM & процеси",
+        "description": "Синхронізація даних, автоматичні етапи угод, звіти та нагадування менеджерам.",
+        "tags": ["Pipelines", "Sync", "Reports"]
+      },
+      "custom": {
+        "title": "Кастомні AI-системи",
+        "description": "Унікальні пайплайни під ваш бізнес: документи, аналітика, внутрішні інструменти.",
+        "tags": ["API", "RAG", "Dashboards"]
+      },
+      "consulting": {
+        "title": "Аудит & стратегія",
+        "description": "Карта процесів, пріоритети автоматизації та roadmap впровадження з ROI.",
+        "tags": ["Audit", "Roadmap", "ROI"]
+      }
+    },
+    "process": {
+      "title": "Як ми працюємо",
+      "subtitle": "Прозорий процес від першого дзвінка до production",
+      "steps": {
+        "discover": {
+          "title": "Діагностика",
+          "description": "Аналізуємо процеси, болі та інструменти. Формуємо пріоритети з ROI."
+        },
+        "design": {
+          "title": "Проєктування",
+          "description": "Архітектура AI-потоків, інтеграції, прототип і погодження з вами."
+        },
+        "build": {
+          "title": "Розробка",
+          "description": "MVP, тести на реальних даних, ітерації до стабільного запуску."
+        },
+        "scale": {
+          "title": "Масштаб",
+          "description": "Моніторинг, оновлення моделей, нові модулі під зростання бізнесу."
+        }
+      }
+    },
+    "integrations": {
+      "title": "Інтегруємось з вашим стеком",
+      "subtitle": "Telegram, CRM, email, таблиці, API — без прив'язки до одного вендора",
+      "items": ["Telegram", "CRM", "Email", "Google Sheets", "Webhooks", "OpenAI", "Notion", "Custom API"]
+    },
+    "cta": {
+      "title": "Потрібна конкретна автоматизація?",
+      "subtitle": "Опишіть задачу в Telegram — підготуємо план і оцінку під ключ.",
+      "button": "Обговорити в Telegram"
+    }
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "Про нас та контакти — MaOs AI Agency",
+      "description": "MaOs AI Agency — преміальне агентство AI-автоматизації для бізнесу."
+    },
+    "hero": {
+      "badge": "About & Contact",
+      "title": "Про нас",
+      "titleHighlight": "та контакти",
+      "subtitle": "Ми будуємо AI automation systems for business — від ідеї до production."
+    },
+    "stats": {
+      "focus": { "value": "AI", "label": "фокус автоматизації" },
+      "delivery": { "value": "2–4 тиж", "label": "типовий MVP" },
+      "support": { "value": "24/7", "label": "підтримка систем" }
+    },
+    "story": {
+      "title": "Хто ми",
+      "quote": "Прозорий AI, який працює на ваш бізнес — не навпаки.",
+      "p1": "MaOs AI Agency — команда, яка спеціалізується на AI-автоматизації для бізнесу: продажі, заявки, комунікація та внутрішні процеси.",
+      "p2": "Наш підхід — темний мінімалізм у продукті й максимальна ясність у процесах: ви бачите, що робить AI, і контролюєте кожен крок.",
+      "p3": "Працюємо прозоро, швидко запускаємо MVP та масштабуємо рішення разом із вашим зростанням."
+    },
+    "values": {
+      "title": "Наші принципи",
+      "items": {
+        "quality": {
+          "title": "Якість коду",
+          "description": "Чиста архітектура, типізація, готовність до деплою на Vercel та хмарні інтеграції."
+        },
+        "speed": {
+          "title": "Швидкий старт",
+          "description": "Перші результати за тижні, а не місяці — ітерації з вимірюваним ефектом."
+        },
+        "partnership": {
+          "title": "Партнерство",
+          "description": "Ми на зв'язку в Telegram — @MaOs_Agency — і супроводжуємо після запуску."
+        }
+      }
+    },
+    "contact": {
+      "title": "Зв'яжіться з нами",
+      "subtitle": "Найшвидший спосіб — Telegram. Опишіть задачу, і ми відповімо з планом та наступними кроками.",
+      "telegram": "Telegram",
+      "telegramHandle": "@MaOs_Agency",
+      "telegramHint": "Натисніть, щоб відкрити чат",
+      "service": "Основна послуга",
+      "serviceValue": "AI automation systems for business",
+      "response": "Час відповіді",
+      "responseValue": "до 24 годин",
+      "checklistTitle": "Що варто написати",
+      "checklist": {
+        "c1": "Коротко про бізнес і нішу",
+        "c2": "Які процеси хочете автоматизувати",
+        "c3": "Які інструменти вже використовуєте (CRM, Telegram тощо)"
+      },
+      "socialTitle": "Соцмережі",
+      "cta": "Написати в Telegram"
+    }
+  },
+  "social": {
+    "title": "Соцмережі",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "threads": "Threads"
+  },
+  "notFound": {
+    "title": "Сторінку не знайдено",
+    "description": "Можливо, посилання застаріло. Поверніться на головну.",
+    "back": "На головну"
+  },
+  "footer": {
+    "tagline": "AI automation systems for business",
+    "rights": "Усі права захищені.",
+    "telegram": "@MaOs_Agency",
+    "social": "Соцмережі"
+  }
+}

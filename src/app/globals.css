@@ -1,0 +1,331 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #050505;
+  --color-dark: #0c0c0c;
+  --color-surface: #111111;
+  --color-elevated: #161616;
+  --color-primary: #e32a39;
+  --color-primary-soft: #ff4d5a;
+  --color-off-white: #fbfbef;
+  --color-muted: #8a8a82;
+  --color-subtle: #5c5c56;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-card: 1.25rem;
+  --radius-card-lg: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply overflow-x-hidden bg-black text-off-white antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tight text-off-white;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: rgb(227 42 57 / 0.35);
+    color: #fbfbef;
+  }
+}
+
+@layer utilities {
+  /* Typography */
+  .premium-eyebrow {
+    @apply text-[10px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-[11px];
+  }
+
+  .premium-label {
+    @apply text-xs font-medium uppercase tracking-[0.18em] text-muted;
+  }
+
+  .text-glow-red {
+    text-shadow:
+      0 0 32px rgb(227 42 57 / 0.35),
+      0 0 64px rgb(227 42 57 / 0.15);
+  }
+
+  .text-gradient-hero {
+    background: linear-gradient(
+      120deg,
+      #fbfbef 0%,
+      #f5f5eb 35%,
+      #e32a39 70%,
+      #ff5c68 100%
+    );
+    background-size: 180% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: hero-shimmer 12s ease-in-out infinite;
+  }
+
+  /* Surfaces */
+  .glass {
+    @apply rounded-[var(--radius-card)] border border-white/[0.07];
+    background: linear-gradient(
+      165deg,
+      rgb(255 255 255 / 0.05) 0%,
+      rgb(255 255 255 / 0.02) 40%,
+      transparent 100%
+    );
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.06),
+      0 4px 24px rgb(0 0 0 / 0.25);
+    backdrop-filter: blur(20px);
+  }
+
+  .glass-strong,
+  .premium-card {
+    @apply rounded-[var(--radius-card-lg)] border border-white/[0.09];
+    background: linear-gradient(
+      165deg,
+      rgb(255 255 255 / 0.07) 0%,
+      rgb(255 255 255 / 0.02) 35%,
+      rgb(0 0 0 / 0.2) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.08),
+      0 8px 40px rgb(0 0 0 / 0.35),
+      0 0 0 1px rgb(255 255 255 / 0.03);
+    backdrop-filter: blur(24px);
+  }
+
+  .premium-card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .premium-card-hover:hover {
+    border-color: rgb(227 42 57 / 0.25);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.1),
+      0 12px 48px rgb(0 0 0 / 0.4),
+      0 0 48px rgb(227 42 57 / 0.08);
+  }
+
+  .premium-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary/20 px-3.5 py-1.5;
+    background: linear-gradient(
+      135deg,
+      rgb(227 42 57 / 0.12) 0%,
+      rgb(227 42 57 / 0.04) 100%
+    );
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.06);
+  }
+
+  .premium-accent-line {
+    @apply border-l border-primary/50 pl-5;
+    border-left-width: 2px;
+  }
+
+  .premium-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+
+  /* Glow & atmosphere */
+  .glow-red {
+    box-shadow:
+      0 0 48px rgb(227 42 57 / 0.12),
+      0 0 96px rgb(227 42 57 / 0.06);
+  }
+
+  .red-glow-bg {
+    background:
+      radial-gradient(ellipse 100% 70% at 50% 100%, rgb(227 42 57 / 0.22), transparent 55%),
+      radial-gradient(ellipse 60% 45% at 90% 10%, rgb(227 42 57 / 0.12), transparent 50%),
+      radial-gradient(ellipse 55% 40% at 0% 35%, rgb(227 42 57 / 0.08), transparent 50%);
+  }
+
+  .red-glow-spot {
+    background: radial-gradient(
+      circle at 50% 40%,
+      rgb(227 42 57 / 0.1) 0%,
+      transparent 50%
+    );
+  }
+
+  .gradient-mesh {
+    background:
+      radial-gradient(ellipse 70% 45% at 50% -15%, rgb(227 42 57 / 0.2), transparent),
+      radial-gradient(ellipse 50% 35% at 100% 0%, rgb(227 42 57 / 0.08), transparent),
+      radial-gradient(ellipse 45% 30% at 0% 45%, rgb(227 42 57 / 0.05), transparent);
+  }
+
+  .hero-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  }
+
+  .hero-vignette {
+    background: radial-gradient(
+      ellipse 85% 65% at 50% 0%,
+      transparent 0%,
+      #050505 72%
+    );
+  }
+
+  .hero-beam {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(227 42 57 / 0.08),
+      rgb(227 42 57 / 0.22),
+      rgb(227 42 57 / 0.08),
+      transparent
+    );
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .border-glow {
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.09),
+      0 0 0 1px rgb(255 255 255 / 0.05),
+      0 0 60px rgb(227 42 57 / 0.08);
+  }
+
+  /* Nav */
+  .premium-nav {
+    @apply rounded-2xl border border-white/[0.08] px-3 py-2.5 sm:px-5 sm:py-3;
+    background: rgb(5 5 5 / 0.72);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.05),
+      0 8px 32px rgb(0 0 0 / 0.4);
+    backdrop-filter: blur(20px) saturate(1.2);
+  }
+
+  .nav-link {
+    @apply relative text-[13px] font-medium tracking-wide text-muted transition-colors duration-300 hover:text-off-white;
+  }
+
+  /* Buttons */
+  .btn-premium {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-wide transition-all duration-300;
+    background: linear-gradient(180deg, #eb3340 0%, #c41e2a 100%);
+    border: 1px solid rgb(255 255 255 / 0.12);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.2),
+      0 4px 20px rgb(227 42 57 / 0.35);
+  }
+
+  .btn-premium:hover {
+    background: linear-gradient(180deg, #f0404d 0%, #d4222f 100%);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.25),
+      0 6px 28px rgb(227 42 57 / 0.45);
+  }
+
+  .btn-ghost-premium {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.03] font-medium text-off-white/80 backdrop-blur-sm transition-all duration-300;
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+  }
+
+  .btn-ghost-premium:hover {
+    @apply border-primary/30 bg-primary/[0.06] text-off-white;
+  }
+
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 42%,
+      rgb(255 255 255 / 0.15) 50%,
+      transparent 58%
+    );
+    transform: translateX(-100%);
+    animation: btn-shine 5s ease-in-out infinite;
+  }
+
+  /* Floating cards */
+  .floating-ai-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/[0.08] bg-elevated/90 backdrop-blur-xl;
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.06),
+      0 12px 40px rgb(0 0 0 / 0.45);
+  }
+
+  .floating-ai-card-glow {
+    @apply pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500;
+    background: radial-gradient(
+      ellipse at 30% 0%,
+      rgb(227 42 57 / 0.2),
+      transparent 65%
+    );
+  }
+
+  .floating-ai-card:hover .floating-ai-card-glow {
+    opacity: 1;
+  }
+
+  /* Stats */
+  .premium-stat {
+    @apply rounded-2xl border border-white/[0.06] px-4 py-5 text-center;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.03) 0%, transparent 100%);
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+  }
+}
+
+@keyframes hero-shimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes btn-shine {
+  0%,
+  80%,
+  100% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes hero-pulse-ring {
+  0%,
+  100% {
+    transform: scale(0.98);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.15;
+  }
+}

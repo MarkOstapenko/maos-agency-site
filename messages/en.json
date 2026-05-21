@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "title": "MaOs AI Agency — AI automation systems for business",
+    "description": "We build turnkey AI systems. Automate sales, leads, CRM, and routine workflows with AI."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "cta": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "badge": "AI Automation Agency",
+    "headlineLine1": "We build",
+    "headlineHighlight": "turnkey AI",
+    "headlineLine2": "systems",
+    "subheadline": "We automate sales, leads, communication, CRM, and routine processes with AI.",
+    "cta": "Message on Telegram",
+    "secondary": "Our services",
+    "trust": {
+      "uptime": { "value": "99.9%", "label": "system uptime" },
+      "speed": { "value": "< 2 min", "label": "AI response time" },
+      "custom": { "value": "100%", "label": "built for you" }
+    },
+    "scroll": "Explore more",
+    "floatingCards": {
+      "crm": { "title": "CRM Sync", "subtitle": "auto-sync" },
+      "aiReply": { "title": "AI Reply", "subtitle": "online" },
+      "leads": { "title": "Lead Bot", "subtitle": "+24 / hr" },
+      "analytics": { "title": "Analytics", "subtitle": "realtime" },
+      "neural": { "title": "Neural AI", "subtitle": "active" }
+    }
+  },
+  "stats": {
+    "projects": "projects",
+    "automations": "automations",
+    "hours": "hours saved",
+    "satisfaction": "happy clients"
+  },
+  "features": {
+    "title": "Why MaOs",
+    "subtitle": "Premium AI solutions for business that work from day one",
+    "items": {
+      "turnkey": {
+        "title": "Turnkey",
+        "description": "From process audit to launch and support — full-cycle AI system development."
+      },
+      "integration": {
+        "title": "Integrations",
+        "description": "CRM, Telegram, email, spreadsheets, APIs — we connect your stack into one automation."
+      },
+      "scale": {
+        "title": "Scale",
+        "description": "Architecture that grows with your business: from MVP to enterprise workflows."
+      },
+      "support": {
+        "title": "24/7 support",
+        "description": "Monitoring, model updates, and fast response to process changes."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "AI Command Center",
+    "subtitle": "Your business under control in real time",
+    "leads": "New leads",
+    "processed": "Processed by AI",
+    "response": "Avg. response time",
+    "uptime": "System uptime"
+  },
+  "flow": {
+    "title": "How automation works",
+    "subtitle": "From lead to outcome — without manual routine",
+    "steps": {
+      "capture": {
+        "title": "Data capture",
+        "description": "Leads from website, Telegram, forms, and CRM enter a single pipeline."
+      },
+      "process": {
+        "title": "AI processing",
+        "description": "Classification, replies, manager assignment, and status updates."
+      },
+      "action": {
+        "title": "Action",
+        "description": "Emails, messages, CRM tasks, and reports — automatically."
+      },
+      "insight": {
+        "title": "Analytics",
+        "description": "Dashboards, metrics, and recommendations to optimize processes."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to automate your business?",
+    "subtitle": "We'll discuss your processes and propose a turnkey solution.",
+    "button": "Message on Telegram"
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Services — MaOs AI Agency",
+      "description": "AI automation systems: chatbots, CRM, sales, integrations, and custom AI pipelines."
+    },
+    "hero": {
+      "badge": "Services",
+      "title": "AI automation",
+      "titleHighlight": "services",
+      "subtitle": "Core service: AI automation systems for business. We design, deploy, and support."
+    },
+    "core": {
+      "badge": "Core service",
+      "title": "AI automation systems for business",
+      "description": "Turnkey AI systems: from lead capture to CRM, communication, and analytics in one pipeline.",
+      "features": {
+        "f1": "Process audit & roadmap",
+        "f2": "Integration with your stack",
+        "f3": "MVP launch in weeks",
+        "f4": "Post-launch support"
+      }
+    },
+    "gridTitle": "Automation areas",
+    "gridSubtitle": "Pick a ready module or combine several — we build a system for your business.",
+    "items": {
+      "sales": {
+        "title": "Sales automation",
+        "description": "AI funnels, lead qualification, follow-up, and CRM integration to grow conversion.",
+        "tags": ["CRM", "Leads", "Follow-up"]
+      },
+      "leads": {
+        "title": "Lead handling",
+        "description": "Instant replies, routing, reminders, and statuses without manual entry.",
+        "tags": ["Forms", "Telegram", "Email"]
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Telegram bots, email assistants, and a unified inbox for team and clients.",
+        "tags": ["Bots", "Inbox", "AI Reply"]
+      },
+      "crm": {
+        "title": "CRM & workflows",
+        "description": "Data sync, automatic deal stages, reports, and manager reminders.",
+        "tags": ["Pipelines", "Sync", "Reports"]
+      },
+      "custom": {
+        "title": "Custom AI systems",
+        "description": "Unique pipelines for your business: documents, analytics, internal tools.",
+        "tags": ["API", "RAG", "Dashboards"]
+      },
+      "consulting": {
+        "title": "Audit & strategy",
+        "description": "Process map, automation priorities, and implementation roadmap with ROI.",
+        "tags": ["Audit", "Roadmap", "ROI"]
+      }
+    },
+    "process": {
+      "title": "How we work",
+      "subtitle": "Transparent process from first call to production",
+      "steps": {
+        "discover": {
+          "title": "Discovery",
+          "description": "We analyze processes, pain points, and tools. Priorities with ROI."
+        },
+        "design": {
+          "title": "Design",
+          "description": "AI flow architecture, integrations, prototype, and your approval."
+        },
+        "build": {
+          "title": "Build",
+          "description": "MVP, real-data tests, iterations until stable launch."
+        },
+        "scale": {
+          "title": "Scale",
+          "description": "Monitoring, model updates, new modules as you grow."
+        }
+      }
+    },
+    "integrations": {
+      "title": "We integrate with your stack",
+      "subtitle": "Telegram, CRM, email, spreadsheets, APIs — no vendor lock-in",
+      "items": ["Telegram", "CRM", "Email", "Google Sheets", "Webhooks", "OpenAI", "Notion", "Custom API"]
+    },
+    "cta": {
+      "title": "Need a specific automation?",
+      "subtitle": "Describe your task on Telegram — we'll prepare a plan and turnkey estimate.",
+      "button": "Discuss on Telegram"
+    }
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "About & Contact — MaOs AI Agency",
+      "description": "MaOs AI Agency — premium AI automation agency for business."
+    },
+    "hero": {
+      "badge": "About & Contact",
+      "title": "About",
+      "titleHighlight": "& Contact",
+      "subtitle": "We build AI automation systems for business — from idea to production."
+    },
+    "stats": {
+      "focus": { "value": "AI", "label": "automation focus" },
+      "delivery": { "value": "2–4 wks", "label": "typical MVP" },
+      "support": { "value": "24/7", "label": "system support" }
+    },
+    "story": {
+      "title": "Who we are",
+      "quote": "Transparent AI that works for your business — not the other way around.",
+      "p1": "MaOs AI Agency is a team focused on AI automation for business: sales, leads, communication, and internal processes.",
+      "p2": "Our approach is dark minimalism in the product and maximum clarity in processes: you see what AI does and control every step.",
+      "p3": "We work transparently, launch MVPs fast, and scale solutions as you grow."
+    },
+    "values": {
+      "title": "Our principles",
+      "items": {
+        "quality": {
+          "title": "Code quality",
+          "description": "Clean architecture, typing, Vercel-ready deploys, and cloud integrations."
+        },
+        "speed": {
+          "title": "Fast start",
+          "description": "First results in weeks, not months — iterations with measurable impact."
+        },
+        "partnership": {
+          "title": "Partnership",
+          "description": "We're on Telegram — @MaOs_Agency — and support you after launch."
+        }
+      }
+    },
+    "contact": {
+      "title": "Get in touch",
+      "subtitle": "Fastest way — Telegram. Describe your task and we'll reply with a plan and next steps.",
+      "telegram": "Telegram",
+      "telegramHandle": "@MaOs_Agency",
+      "telegramHint": "Click to open chat",
+      "service": "Core service",
+      "serviceValue": "AI automation systems for business",
+      "response": "Response time",
+      "responseValue": "within 24 hours",
+      "checklistTitle": "What to include",
+      "checklist": {
+        "c1": "Brief about your business and niche",
+        "c2": "Processes you want to automate",
+        "c3": "Tools you already use (CRM, Telegram, etc.)"
+      },
+      "socialTitle": "Follow us",
+      "cta": "Message on Telegram"
+    }
+  },
+  "social": {
+    "title": "Social",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "threads": "Threads"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The link may be outdated. Return to the home page.",
+    "back": "Back to home"
+  },
+  "footer": {
+    "tagline": "AI automation systems for business",
+    "rights": "All rights reserved.",
+    "telegram": "@MaOs_Agency",
+    "social": "Social"
+  }
+}

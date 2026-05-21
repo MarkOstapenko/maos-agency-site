@@ -1,0 +1,25 @@
+export const BRAND = {
+  name: "MaOs AI Agency",
+  telegram: "https://t.me/MaOs_Agency",
+  telegramHandle: "@MaOs_Agency",
+} as const;
+
+export const SOCIAL_LINKS = [
+  {
+    id: "instagram",
+    href: "https://www.instagram.com/maos_agency",
+    handle: "@maos_agency",
+  },
+  {
+    id: "tiktok",
+    href: "https://www.tiktok.com/@maos_agency",
+    handle: "@maos_agency",
+  },
+  {
+    id: "threads",
+    href: "https://www.threads.com/@maos_agency",
+    handle: "@maos_agency",
+  },
+] as const;
+
+export type SocialId = (typeof SOCIAL_LINKS)[number]["id"];
