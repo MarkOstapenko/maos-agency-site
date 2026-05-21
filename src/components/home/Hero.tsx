@@ -9,17 +9,9 @@ import { TelegramButton } from "@/components/ui/TelegramButton";
 import { HeroBackground } from "./HeroBackground";
 import { FloatingAiCards } from "./FloatingAiCards";
 import { DashboardPreview } from "./DashboardPreview";
+import { fadeUp } from "@/lib/motion";
 
 const trustKeys = ["uptime", "speed", "custom"] as const;
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -33,12 +25,7 @@ export function Hero() {
         <div className="grid min-w-0 flex-1 items-center gap-10 sm:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:gap-16">
           {/* Copy */}
           <div className="relative z-10">
-            <motion.div
-              custom={0}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-            >
+            <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible">
               <span className="premium-badge premium-eyebrow gap-2.5">
                 <span className="relative flex h-1.5 w-1.5 shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/80 opacity-75" />

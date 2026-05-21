@@ -66,9 +66,21 @@
     "leads": "Нові заявки",
     "processed": "Оброблено AI",
     "response": "Середній час відповіді",
-    "uptime": "Uptime систем"
+    "uptime": "Uptime систем",
+    "widgets": {
+      "telegram": "Telegram",
+      "leads": "+12 заявок",
+      "aiActive": "AI активний",
+      "processing": "Обробка",
+      "live": "LIVE"
+    },
+    "pipeline": {
+      "label": "Пайплайн автоматизації",
+      "steps": ["Заявка", "AI-класифікація", "CRM sync", "Сповіщення"]
+    }
   },
   "flow": {
+    "badge": "Процес",
     "title": "Як працює автоматизація",
     "subtitle": "Від заявки до результату — без ручної рутини",
     "steps": {
@@ -256,9 +268,10 @@
     "back": "На головну"
   },
   "footer": {
-    "tagline": "AI automation systems for business",
+    "tagline": "AI-системи автоматизації для бізнесу",
     "rights": "Усі права захищені.",
     "telegram": "@MaOs_Agency",
-    "social": "Соцмережі"
+    "social": "Соцмережі",
+    "menu": "Меню"
   }
 }

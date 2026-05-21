@@ -3,4 +3,3 @@ export { AboutStats } from "./AboutStats";
 export { AboutStory } from "./AboutStory";
 export { AboutValues } from "./AboutValues";
 export { AboutContact } from "./AboutContact";
-export { AboutContent } from "./AboutContent";

@@ -26,7 +26,7 @@ Site MaOs/
 │   │   │   ├── Navbar.tsx
 │   │   │   ├── Footer.tsx
 │   │   │   ├── LanguageSwitcher.tsx
-│   │   │   └── PageHero.tsx
+│   │   │   └── SubpageHero.tsx
 │   │   │
 │   │   ├── ui/               # перевикористовувані UI
 │   │   │   ├── index.ts
@@ -90,5 +90,5 @@ Site MaOs/
 | `app/[locale]/*/page.tsx` | маршрут, metadata, `setRequestLocale` |
 | `components/pages/*` | збір секцій однієї сторінки |
 | `components/home|services|about/*` | одна секція / блок |
-| `components/layout/*` | Navbar, Footer, PageHero |
+| `components/layout/*` | Navbar, Footer, SubpageHero, LanguageSwitcher |
 | `components/ui/*` | кнопки, контейнер, glow, заголовки |

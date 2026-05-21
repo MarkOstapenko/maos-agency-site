@@ -49,15 +49,15 @@ export function ServicesGrid() {
 
           return (
             <MotionItem key={key}>
-            <motion.article
-              whileHover={cardHover}
-              className={cn(
-                "group relative flex flex-col overflow-hidden rounded-3xl border transition-all duration-300",
-                isFeatured
-                  ? "premium-card border-primary/25 bg-gradient-to-br from-primary/[0.08] to-transparent shadow-[0_0_48px_rgb(227_42_57/0.1)] md:col-span-2 lg:col-span-1"
-                  : "premium-card premium-card-hover"
-              )}
-            >
+              <motion.article
+                whileHover={cardHover}
+                className={cn(
+                  "group relative flex h-full flex-col overflow-hidden rounded-3xl border transition-all duration-300",
+                  isFeatured
+                    ? "premium-card border-primary/25 bg-gradient-to-br from-primary/[0.08] to-transparent shadow-[0_0_48px_rgb(227_42_57/0.1)] md:col-span-2 lg:col-span-1"
+                    : "premium-card premium-card-hover"
+                )}
+              >
               <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
 
               <div className="relative p-5 sm:p-8">
@@ -109,7 +109,7 @@ export function ServicesGrid() {
               >
                 <ArrowUpRight className="h-5 w-5 text-primary/60" />
               </motion.div>
-            </motion.article>
+              </motion.article>
             </MotionItem>
           );
         })}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Database, Cpu, Send, BarChart3 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
 import { cardHover } from "@/lib/motion";
@@ -25,9 +26,9 @@ export function AutomationFlow() {
         transition={{ duration: 6, repeat: Infinity }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Container className="relative">
         <SectionHeading
-          badge="Workflow"
+          badge={t("badge")}
           title={t("title")}
           subtitle={t("subtitle")}
           className="mb-16"
@@ -62,7 +63,7 @@ export function AutomationFlow() {
             ))}
           </MotionStagger>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

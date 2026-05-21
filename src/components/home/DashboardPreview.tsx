@@ -38,6 +38,7 @@ function Sparkline() {
 
 export function DashboardPreview() {
   const t = useTranslations("dashboard");
+  const pipelineSteps = t.raw("pipeline.steps") as string[];
 
   return (
     <div className="relative">
@@ -52,8 +53,8 @@ export function DashboardPreview() {
             <MessageSquare className="h-4 w-4 text-primary" />
           </div>
           <div>
-            <p className="text-[10px] text-off-white/40">Telegram</p>
-            <p className="text-xs font-semibold text-off-white">+12 leads</p>
+            <p className="text-[10px] text-muted">{t("widgets.telegram")}</p>
+            <p className="text-xs font-semibold text-off-white">{t("widgets.leads")}</p>
           </div>
         </div>
       </motion.div>
@@ -64,8 +65,8 @@ export function DashboardPreview() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
       >
         <Zap className="h-5 w-5 text-primary" />
-        <p className="mt-1 text-xs font-semibold text-off-white">AI Active</p>
-        <p className="text-[10px] text-primary/80">Processing</p>
+        <p className="mt-1 text-xs font-semibold text-off-white">{t("widgets.aiActive")}</p>
+        <p className="text-[10px] text-primary/80">{t("widgets.processing")}</p>
       </motion.div>
 
       <motion.div
@@ -75,7 +76,7 @@ export function DashboardPreview() {
       >
         <div className="flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgb(52_211_153/0.8)]" />
-          <span className="font-mono text-[10px] text-off-white/60">LIVE</span>
+          <span className="font-mono text-[10px] text-muted">{t("widgets.live")}</span>
         </div>
       </motion.div>
 
@@ -151,7 +152,7 @@ export function DashboardPreview() {
             </div>
             <div className="min-w-0 flex-1">
               <div className="mb-1 flex justify-between text-[10px]">
-                <span className="text-off-white/50">Automation pipeline</span>
+                <span className="text-muted">{t("pipeline.label")}</span>
                 <span className="font-mono text-primary">78%</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -167,7 +168,7 @@ export function DashboardPreview() {
           </div>
 
           <div className="mt-3 flex flex-wrap gap-2">
-            {["Lead in", "AI classify", "CRM sync", "Notify"].map((step, i) => (
+            {pipelineSteps.map((step, i) => (
               <motion.span
                 key={step}
                 initial={{ opacity: 0, x: -8 }}
@@ -176,7 +177,9 @@ export function DashboardPreview() {
                 className="inline-flex items-center rounded-lg border border-white/5 bg-white/[0.03] px-2 py-1 font-mono text-[9px] text-off-white/40"
               >
                 {step}
-                {i < 3 && <span className="ml-1.5 text-primary/50">→</span>}
+                {i < pipelineSteps.length - 1 && (
+                  <span className="ml-1.5 text-primary/50">→</span>
+                )}
               </motion.span>
             ))}
           </div>

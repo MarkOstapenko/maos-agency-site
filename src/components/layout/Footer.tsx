@@ -48,7 +48,7 @@ export async function Footer() {
               <LanguageSwitcher />
             </div>
             <div>
-              <p className="premium-label mb-4">Menu</p>
+              <p className="premium-label mb-4">{t("menu")}</p>
               <ul className="space-y-3">
                 {(["home", "services", "about"] as const).map((key) => (
                   <li key={key}>

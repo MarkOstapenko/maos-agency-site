@@ -1,5 +1,5 @@
 // Layout
-export { Navbar, Footer, LanguageSwitcher, PageHero } from "./layout";
+export { Navbar, Footer, LanguageSwitcher } from "./layout";
 
 // UI
 export {

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Layers, Link2, Rocket, Headphones } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
 import { cardHover } from "@/lib/motion";
@@ -15,7 +16,7 @@ export function Features() {
 
   return (
     <section className="py-16 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Container>
         <SectionHeading title={t("title")} subtitle={t("subtitle")} className="mb-16" />
 
         <MotionStagger className="grid gap-6 sm:grid-cols-2 lg:gap-8">
@@ -45,7 +46,7 @@ export function Features() {
             );
           })}
         </MotionStagger>
-      </div>
+      </Container>
     </section>
   );
 }

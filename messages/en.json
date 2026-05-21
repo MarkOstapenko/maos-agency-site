@@ -66,9 +66,21 @@
     "leads": "New leads",
     "processed": "Processed by AI",
     "response": "Avg. response time",
-    "uptime": "System uptime"
+    "uptime": "System uptime",
+    "widgets": {
+      "telegram": "Telegram",
+      "leads": "+12 leads",
+      "aiActive": "AI Active",
+      "processing": "Processing",
+      "live": "LIVE"
+    },
+    "pipeline": {
+      "label": "Automation pipeline",
+      "steps": ["Lead in", "AI classify", "CRM sync", "Notify"]
+    }
   },
   "flow": {
+    "badge": "Workflow",
     "title": "How automation works",
     "subtitle": "From lead to outcome — without manual routine",
     "steps": {
@@ -259,6 +271,7 @@
     "tagline": "AI automation systems for business",
     "rights": "All rights reserved.",
     "telegram": "@MaOs_Agency",
-    "social": "Social"
+    "social": "Social",
+    "menu": "Menu"
   }
 }

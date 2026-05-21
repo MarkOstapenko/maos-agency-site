@@ -4,7 +4,10 @@ import { routing } from "@/i18n/routing";
 function getBaseUrl() {
   const url = process.env.NEXT_PUBLIC_SITE_URL;
   if (url) return url.replace(/\/$/, "");
-  return "https://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "http://localhost:3000";
 }
 
 const paths = ["", "/services", "/about"] as const;

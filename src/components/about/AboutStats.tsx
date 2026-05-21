@@ -21,7 +21,7 @@ export function AboutStats() {
               <p className="font-mono text-xl font-bold text-primary sm:text-3xl">
                 {t(`${key}.value`)}
               </p>
-              <p className="mt-2 text-[10px] leading-tight text-off-white/45 sm:text-xs">
+              <p className="mt-2 text-[10px] leading-tight text-muted sm:text-xs">
                 {t(`${key}.label`)}
               </p>
             </MotionItem>
