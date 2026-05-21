@@ -7,7 +7,8 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PremiumCard } from "@/components/ui/PremiumCard";
-import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
+import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
 import { MotionReveal } from "@/components/ui/motion";
 import {
   QUIZ_STEPS,
@@ -77,9 +78,8 @@ export function AiAuditQuiz() {
 
   return (
     <ParallaxSection id="ai-audit" className="section-y section-defer relative overflow-hidden">
-      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0">
-        <div className="quiz-section-glow absolute inset-0" aria-hidden />
-      </ParallaxScroll>
+      <SectionAtmosphere variant="audit" />
+      <div className="quiz-section-glow pointer-events-none absolute inset-0" aria-hidden />
 
       <Container className="relative">
         <Parallax speed="subtle" className="section-head">

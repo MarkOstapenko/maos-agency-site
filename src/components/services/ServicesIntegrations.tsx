@@ -1,39 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { MotionStagger, MotionItem } from "@/components/ui/motion";
-import { tapScale } from "@/lib/motion";
+import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
+import { IntegrationsEcosystem } from "./integrations/IntegrationsEcosystem";
 
 export function ServicesIntegrations() {
   const t = useTranslations("servicesPage.integrations");
-  const items = t.raw("items") as string[];
 
   return (
-    <section className="section-y">
-      <Container>
-        <SectionHeading
-          title={t("title")}
-          subtitle={t("subtitle")}
-          className="section-head"
-        />
+    <ParallaxSection className="integrations-section section-band section-y relative overflow-hidden">
+      <div className="integrations-ambient pointer-events-none absolute inset-0" aria-hidden />
+      <div className="integrations-mesh pointer-events-none absolute inset-0" aria-hidden />
+      <div className="integrations-grid-bg pointer-events-none absolute inset-0" aria-hidden />
 
-        <MotionStagger className="flex flex-wrap justify-center gap-3">
-          {items.map((item) => (
-            <MotionItem key={item}>
-              <motion.span
-                whileHover={{ scale: 1.03, y: -3 }}
-                whileTap={tapScale}
-                className="pill-tag"
-              >
-                {item}
-              </motion.span>
-            </MotionItem>
-          ))}
-        </MotionStagger>
+      <Container className="relative">
+        <Parallax speed="subtle" className="section-head">
+          <SectionHeading title={t("title")} subtitle={t("subtitle")} />
+        </Parallax>
+
+        <Parallax speed="medium">
+          <IntegrationsEcosystem />
+        </Parallax>
       </Container>
-    </section>
+    </ParallaxSection>
   );
 }

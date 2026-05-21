@@ -13,18 +13,18 @@ export function AboutStats() {
   return (
     <section className="relative -mt-4 pb-12 sm:pb-16">
       <Container>
-        <MotionStagger className="grid grid-cols-3 gap-3 sm:gap-6">
+        <MotionStagger className="stats-grid stats-grid--compact">
           {statKeys.map((key) => (
             <MotionItem key={key} className="h-full">
               <article
                 className={cn(
-                  "stats-card group relative h-full text-center",
+                  "stats-card group relative h-full",
                   key === "focus" && "stats-card-featured"
                 )}
               >
-                <div className="stats-card-glow pointer-events-none" aria-hidden />
+                <div className="stats-card-sheen pointer-events-none" aria-hidden />
                 <div className="stats-card-edge pointer-events-none" aria-hidden />
-                <dl className="stats-card-inner relative items-center text-center">
+                <dl className="stats-card-inner relative">
                   <dt className="sr-only">{t(`${key}.label`)}</dt>
                   <dd className="stats-card-value m-0 font-mono tabular-nums">
                     {t(`${key}.value`)}

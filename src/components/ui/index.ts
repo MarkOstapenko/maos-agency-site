@@ -10,3 +10,5 @@ export { SocialLinks } from "./SocialLinks";
 export { MotionReveal, MotionStagger, MotionItem } from "./motion";
 export { Parallax, ParallaxSection, ParallaxScroll } from "./Parallax";
 export { CustomCursor } from "./CustomCursor";
+export { SectionAtmosphere } from "./SectionAtmosphere";
+export { VisualAnchor } from "./VisualAnchor";

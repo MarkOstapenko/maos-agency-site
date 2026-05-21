@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PremiumCard } from "@/components/ui/PremiumCard";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
 const featureKeys = ["turnkey", "integration", "scale", "support"] as const;
@@ -15,8 +16,9 @@ export function Features() {
   const t = useTranslations("features");
 
   return (
-    <ParallaxSection className="section-y">
-      <Container>
+    <ParallaxSection className="section-y relative overflow-hidden">
+      <SectionAtmosphere variant="features" />
+      <Container className="relative">
         <Parallax speed="subtle" className="section-head">
           <SectionHeading title={t("title")} subtitle={t("subtitle")} />
         </Parallax>

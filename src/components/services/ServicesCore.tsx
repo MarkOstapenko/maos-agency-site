@@ -5,6 +5,7 @@ import { Check, Cpu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { PremiumCard } from "@/components/ui/PremiumCard";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 
 const featureKeys = ["f1", "f2", "f3", "f4"] as const;
 
@@ -12,8 +13,9 @@ export function ServicesCore() {
   const t = useTranslations("servicesPage.core");
 
   return (
-    <section className="relative -mt-2 pb-20 sm:pb-28">
-      <Container>
+    <section className="relative -mt-2 overflow-hidden pb-20 sm:pb-28">
+      <SectionAtmosphere variant="services" />
+      <Container className="relative">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}

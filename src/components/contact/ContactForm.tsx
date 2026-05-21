@@ -182,17 +182,17 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
       <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/8 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-16 h-40 w-40 rounded-full bg-primary/4 blur-3xl" />
 
-      <form onSubmit={handleSubmit} className="card-pad relative" noValidate>
-        <div className="mb-5 flex flex-wrap items-start justify-between gap-4 sm:mb-6">
-          <div>
+      <form onSubmit={handleSubmit} className="contact-form relative" noValidate>
+        <header className="contact-form-header">
+          <div className="contact-form-header-main">
             <p className="premium-eyebrow text-primary/80">{t("badge")}</p>
-            <h3 className="mt-1.5">{t("title")}</h3>
-            <p className="text-body mt-2 max-w-md">{t("subtitle")}</p>
+            <h3 className="contact-form-title">{t("title")}</h3>
+            <p className="contact-form-subtitle">{t("subtitle")}</p>
           </div>
-          <span className="premium-label rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 normal-case tracking-[0.1em]">
-            {t("secure")}
-          </span>
-        </div>
+          <span className="contact-form-secure">{t("secure")}</span>
+        </header>
+
+        <div className="contact-form-body card-pad-lg">
 
         <AnimatePresence>
           {status === "error" && errorKey && !Object.keys(fieldErrors).length && (
@@ -218,7 +218,7 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
           aria-hidden
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+        <div className="contact-form-fields">
           <div>
             <label htmlFor={`${source}-name`} className="form-label">
               {t("fields.name")} <span className="text-primary">*</span>
@@ -378,7 +378,7 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
               rows={5}
               maxLength={CONTACT_LIMITS.message}
               disabled={status === "submitting"}
-              className={cn(inputClass("message"), "form-textarea min-h-[128px] resize-y")}
+              className={cn(inputClass("message"), "form-textarea resize-y")}
               data-lenis-prevent
               placeholder={t("placeholders.message")}
               aria-invalid={!!fieldErrors.message}
@@ -395,8 +395,8 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-4 border-t border-white/6 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-caption max-w-sm leading-relaxed">{t("privacy")}</p>
+        <div className="contact-form-footer">
+          <p className="contact-form-privacy">{t("privacy")}</p>
           <motion.button
             type="submit"
             disabled={status === "submitting"}
@@ -418,7 +418,7 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
           </motion.button>
         </div>
 
-        <p className="text-caption mt-4 text-center sm:text-left">
+        <p className="contact-form-alt">
           {t("orTelegram")}{" "}
           <a
             href={BRAND.telegram}
@@ -429,6 +429,7 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
             {BRAND.telegramHandle}
           </a>
         </p>
+        </div>
       </form>
 
       {status === "submitting" && (

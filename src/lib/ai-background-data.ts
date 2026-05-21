@@ -40,18 +40,30 @@ export type ParticleSpec = {
   duration: number;
 };
 
-const PARTICLE_COUNT = 30;
+/** Vertical bands × columns — structured drift, not random scatter */
+const PARTICLE_COLUMNS = [14, 32, 50, 68, 86] as const;
+const PARTICLE_ROWS = [12, 28, 44, 60, 76] as const;
 
-export const FLOATING_PARTICLES: ParticleSpec[] = Array.from(
-  { length: PARTICLE_COUNT },
-  (_, i) => ({
-    id: i,
-    left: ((i * 37 + 13) % 97) + 1.5,
-    top: ((i * 53 + 19) % 95) + 2.5,
-    size: 1 + (i % 3) * 0.5,
-    delay: (i % 10) * 0.55,
-    duration: 9 + (i % 6) * 1.4,
-  })
-);
+function buildStructuredParticles(): ParticleSpec[] {
+  const out: ParticleSpec[] = [];
+  let id = 0;
+  for (const col of PARTICLE_COLUMNS) {
+    for (const row of PARTICLE_ROWS) {
+      const jitterX = ((id * 5) % 7) - 3;
+      const jitterY = ((id * 11) % 9) - 4;
+      out.push({
+        id: id++,
+        left: col + jitterX * 0.35,
+        top: row + jitterY * 0.35,
+        size: 1 + (id % 2) * 0.5,
+        delay: (id % 8) * 0.65,
+        duration: 10 + (id % 5) * 1.2,
+      });
+    }
+  }
+  return out;
+}
 
-export const MOBILE_PARTICLE_LIMIT = 8;
+export const FLOATING_PARTICLES: ParticleSpec[] = buildStructuredParticles();
+
+export const MOBILE_PARTICLE_LIMIT = 10;

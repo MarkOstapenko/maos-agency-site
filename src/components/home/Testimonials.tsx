@@ -4,7 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
+import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
 import { MotionStagger, MotionReveal } from "@/components/ui/motion";
 import {
   TestimonialCard,
@@ -28,9 +29,7 @@ export function Testimonials() {
 
   return (
     <ParallaxSection className="section-y section-defer relative overflow-hidden">
-      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="red-glow-spot absolute inset-0" />
-      </ParallaxScroll>
+      <SectionAtmosphere variant="testimonials" />
 
       <Container className="relative">
         <Parallax speed="subtle" className="section-head">

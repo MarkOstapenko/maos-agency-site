@@ -589,7 +589,21 @@
       "badge": "Services",
       "title": "AI automation",
       "titleHighlight": "services",
-      "subtitle": "Core service: AI automation systems for business. We design, deploy, and support."
+      "subtitle": "Core service: AI automation systems for business. We design, deploy, and support.",
+      "visual": {
+        "hubTitle": "Automation Hub",
+        "hubSubtitle": "Live pipeline",
+        "status": "Active",
+        "metric1": "Automations",
+        "metric1Value": "12",
+        "metric2": "Uptime",
+        "metric2Value": "99.9%",
+        "processing": "Processing",
+        "floatAutomation": "AI Engine",
+        "floatAutomationStatus": "Running",
+        "floatSync": "CRM Sync",
+        "floatSyncStatus": "Connected"
+      }
     },
     "core": {
       "badge": "Core service",
@@ -661,6 +675,7 @@
     "integrations": {
       "title": "We integrate with your stack",
       "subtitle": "Telegram, CRM, email, spreadsheets, APIs — no vendor lock-in",
+      "hubLabel": "AI Core",
       "items": ["Telegram", "CRM", "Email", "Google Sheets", "Webhooks", "OpenAI", "Notion", "Custom API"]
     },
     "cta": {
@@ -686,11 +701,25 @@
       "support": { "value": "24/7", "label": "system support" }
     },
     "story": {
+      "eyebrow": "About MaOs",
       "title": "Who we are",
       "quote": "Transparent AI that works for your business — not the other way around.",
       "p1": "MaOs AI Agency is a team focused on AI automation for business: sales, leads, communication, and internal processes.",
       "p2": "Our approach is dark minimalism in the product and maximum clarity in processes: you see what AI does and control every step.",
-      "p3": "We work transparently, launch MVPs fast, and scale solutions as you grow."
+      "p3": "We work transparently, launch MVPs fast, and scale solutions as you grow.",
+      "card": {
+        "status": "Systems online",
+        "tagline": "AI automation agency · Ukraine",
+        "chipCrm": "CRM sync",
+        "chipAi": "AI Reply",
+        "chipLeads": "+24 leads / hr",
+        "metricUptime": "99.9%",
+        "metricUptimeLabel": "uptime",
+        "metricProjects": "50+",
+        "metricProjectsLabel": "projects",
+        "metricResponse": "<2 min",
+        "metricResponseLabel": "AI response"
+      }
     },
     "values": {
       "title": "Our principles",
@@ -714,11 +743,26 @@
       "subtitle": "Fastest way — Telegram. Describe your task and we'll reply with a plan and next steps.",
       "telegram": "Telegram",
       "telegramHandle": "@MaOs_Agency",
-      "telegramHint": "Click to open chat",
+      "telegramHint": "Direct line to the team",
+      "online": "Online now",
+      "responseBadge": "< 2 min",
+      "responseBadgeLabel": "avg. first reply",
       "service": "Core service",
       "serviceValue": "AI automation systems for business",
-      "response": "Response time",
-      "responseValue": "within 24 hours",
+      "response": "Guaranteed reply",
+      "responseValue": "within 24h",
+      "activityTitle": "Live channel",
+      "activity": {
+        "a1": "Inquiry received — routing to AI",
+        "a2": "Process map draft ready",
+        "a3": "Estimate queued for review"
+      },
+      "activityTime": {
+        "a1": "now",
+        "a2": "4m",
+        "a3": "12m"
+      },
+      "openChat": "Open Telegram chat",
       "checklistTitle": "What to include",
       "checklist": {
         "c1": "Brief about your business and niche",

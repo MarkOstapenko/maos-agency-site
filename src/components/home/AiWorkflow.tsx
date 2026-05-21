@@ -11,7 +11,8 @@ import {
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
+import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
 import { MotionStagger } from "@/components/ui/motion";
 import { WorkflowConnector } from "./workflow/WorkflowConnector";
 import { WorkflowDecor } from "./workflow/WorkflowDecor";
@@ -34,9 +35,8 @@ export function AiWorkflow() {
 
   return (
     <ParallaxSection className="section-band section-y section-defer relative overflow-hidden">
-      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0">
-        <div className="workflow-section-glow absolute inset-0" />
-      </ParallaxScroll>
+      <SectionAtmosphere variant="workflow" />
+      <div className="workflow-section-glow pointer-events-none absolute inset-0" aria-hidden />
 
       <WorkflowDecor />
 

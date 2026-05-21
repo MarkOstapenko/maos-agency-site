@@ -2,13 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import type { SectionAtmosphereVariant } from "@/lib/section-atmosphere";
 
 type SubpageHeroProps = {
   badge: string;
   title: string;
   titleHighlight: string;
   subtitle: string;
+  atmosphere?: SectionAtmosphereVariant;
 };
 
 export function SubpageHero({
@@ -16,9 +19,11 @@ export function SubpageHero({
   title,
   titleHighlight,
   subtitle,
+  atmosphere = "subpage",
 }: SubpageHeroProps) {
   return (
     <ParallaxSection className="relative overflow-hidden pt-[calc(6.5rem+env(safe-area-inset-top,0px))] pb-12 sm:pt-36 sm:pb-24">
+      <SectionAtmosphere variant={atmosphere} />
       <ParallaxScroll speed="bg" className="pointer-events-none absolute inset-0">
         <div className="red-glow-bg absolute inset-0" />
       </ParallaxScroll>

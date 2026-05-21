@@ -4,7 +4,8 @@ import { Database, Headphones, Sparkles, Tent } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
+import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
 import { MotionStagger } from "@/components/ui/motion";
 import { cn } from "@/lib/utils";
 import { CaseStudyCard } from "./case-study/CaseStudyCard";
@@ -51,10 +52,8 @@ export function CaseStudies() {
 
   return (
     <ParallaxSection className="section-band section-y section-defer relative overflow-hidden">
-      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0">
-        <div className="red-glow-spot absolute inset-0" />
-        <div className="case-studies-glow pointer-events-none absolute inset-0" aria-hidden />
-      </ParallaxScroll>
+      <SectionAtmosphere variant="caseStudies" />
+      <div className="case-studies-glow pointer-events-none absolute inset-0" aria-hidden />
 
       <Container className="relative">
         <Parallax speed="subtle" className="section-head">

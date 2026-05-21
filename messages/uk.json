@@ -589,7 +589,21 @@
       "badge": "Services",
       "title": "Послуги",
       "titleHighlight": "AI-автоматизації",
-      "subtitle": "Основна послуга: AI automation systems for business. Проєктуємо, впроваджуємо та супроводжуємо."
+      "subtitle": "Основна послуга: AI automation systems for business. Проєктуємо, впроваджуємо та супроводжуємо.",
+      "visual": {
+        "hubTitle": "Automation Hub",
+        "hubSubtitle": "Живий pipeline",
+        "status": "Активно",
+        "metric1": "Автоматизації",
+        "metric1Value": "12",
+        "metric2": "Uptime",
+        "metric2Value": "99.9%",
+        "processing": "Обробка",
+        "floatAutomation": "AI Engine",
+        "floatAutomationStatus": "Працює",
+        "floatSync": "CRM Sync",
+        "floatSyncStatus": "Підключено"
+      }
     },
     "core": {
       "badge": "Core service",
@@ -661,6 +675,7 @@
     "integrations": {
       "title": "Інтегруємось з вашим стеком",
       "subtitle": "Telegram, CRM, email, таблиці, API — без прив'язки до одного вендора",
+      "hubLabel": "AI-ядро",
       "items": ["Telegram", "CRM", "Email", "Google Sheets", "Webhooks", "OpenAI", "Notion", "Custom API"]
     },
     "cta": {
@@ -686,11 +701,25 @@
       "support": { "value": "24/7", "label": "підтримка систем" }
     },
     "story": {
+      "eyebrow": "Про MaOs",
       "title": "Хто ми",
       "quote": "Прозорий AI, який працює на ваш бізнес — не навпаки.",
       "p1": "MaOs AI Agency — команда, яка спеціалізується на AI-автоматизації для бізнесу: продажі, заявки, комунікація та внутрішні процеси.",
       "p2": "Наш підхід — темний мінімалізм у продукті й максимальна ясність у процесах: ви бачите, що робить AI, і контролюєте кожен крок.",
-      "p3": "Працюємо прозоро, швидко запускаємо MVP та масштабуємо рішення разом із вашим зростанням."
+      "p3": "Працюємо прозоро, швидко запускаємо MVP та масштабуємо рішення разом із вашим зростанням.",
+      "card": {
+        "status": "Системи online",
+        "tagline": "AI automation agency · Україна",
+        "chipCrm": "CRM sync",
+        "chipAi": "AI Reply",
+        "chipLeads": "+24 ліди / год",
+        "metricUptime": "99.9%",
+        "metricUptimeLabel": "uptime",
+        "metricProjects": "50+",
+        "metricProjectsLabel": "проєктів",
+        "metricResponse": "<2 хв",
+        "metricResponseLabel": "відповідь AI"
+      }
     },
     "values": {
       "title": "Наші принципи",
@@ -714,11 +743,26 @@
       "subtitle": "Найшвидший спосіб — Telegram. Опишіть задачу, і ми відповімо з планом та наступними кроками.",
       "telegram": "Telegram",
       "telegramHandle": "@MaOs_Agency",
-      "telegramHint": "Натисніть, щоб відкрити чат",
+      "telegramHint": "Прямий канал з командою",
+      "online": "Online зараз",
+      "responseBadge": "< 2 хв",
+      "responseBadgeLabel": "середня перша відповідь",
       "service": "Основна послуга",
       "serviceValue": "AI automation systems for business",
-      "response": "Час відповіді",
-      "responseValue": "до 24 годин",
+      "response": "Гарантована відповідь",
+      "responseValue": "до 24 год",
+      "activityTitle": "Живий канал",
+      "activity": {
+        "a1": "Заявку отримано — маршрутизація в AI",
+        "a2": "Чернетка карти процесів готова",
+        "a3": "Оцінку поставлено в чергу"
+      },
+      "activityTime": {
+        "a1": "зараз",
+        "a2": "4 хв",
+        "a3": "12 хв"
+      },
+      "openChat": "Відкрити чат у Telegram",
       "checklistTitle": "Що варто написати",
       "checklist": {
         "c1": "Коротко про бізнес і нішу",

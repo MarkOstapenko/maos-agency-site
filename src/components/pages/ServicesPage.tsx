@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { Container } from "@/components/ui/Container";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { ServicesHero, ServicesCore, ServicesGrid } from "@/components/services";
 import { SectionSkeleton } from "@/components/ui/SectionSkeleton";
 
@@ -32,8 +33,9 @@ export function ServicesPage() {
     <>
       <ServicesHero />
       <ServicesCore />
-      <section className="section-y-sm section-defer pt-0">
-        <Container>
+      <section className="section-y-sm section-defer relative overflow-hidden pt-0">
+        <SectionAtmosphere variant="default" />
+        <Container className="relative">
           <ServicesGrid />
         </Container>
       </section>

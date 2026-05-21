@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PremiumCard } from "@/components/ui/PremiumCard";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
 
 const valueKeys = ["quality", "speed", "partnership"] as const;
@@ -14,8 +15,8 @@ export function AboutValues() {
   const t = useTranslations("aboutPage.values");
 
   return (
-    <section className="section-band section-y relative">
-      <div className="red-glow-spot pointer-events-none absolute inset-0" />
+    <section className="section-band section-y relative overflow-hidden">
+      <SectionAtmosphere variant="values" />
       <Container className="relative">
         <SectionHeading title={t("title")} className="section-head" />
 

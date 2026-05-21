@@ -7,7 +7,8 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PremiumCard } from "@/components/ui/PremiumCard";
-import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
+import { Parallax, ParallaxSection } from "@/components/ui/Parallax";
 import { MotionReveal } from "@/components/ui/motion";
 import {
   VOICE_DEMO_TIMING,
@@ -57,9 +58,8 @@ export function VoiceAiDemo() {
 
   return (
     <ParallaxSection id="voice-ai" className="section-band section-y section-defer relative overflow-hidden">
-      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0">
-        <div className="voice-demo-glow absolute inset-0" aria-hidden />
-      </ParallaxScroll>
+      <SectionAtmosphere variant="voice" />
+      <div className="voice-demo-glow pointer-events-none absolute inset-0" aria-hidden />
 
       <Container className="relative">
         <Parallax speed="subtle" className="section-head">

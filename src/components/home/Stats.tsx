@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
+import { SectionAtmosphere } from "@/components/ui/SectionAtmosphere";
 import { ParallaxSection } from "@/components/ui/Parallax";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
 import { cn } from "@/lib/utils";
@@ -24,23 +25,22 @@ function StatCard({ index, value, label, featured }: StatCardProps) {
   return (
     <article
       className={cn(
-        "stats-card group relative h-full text-left",
+        "stats-card group relative h-full",
         featured && "stats-card-featured"
       )}
     >
-      <div className="stats-card-glow pointer-events-none" aria-hidden />
+      <div className="stats-card-sheen pointer-events-none" aria-hidden />
       <div className="stats-card-edge pointer-events-none" aria-hidden />
       <div className="stats-card-noise pointer-events-none" aria-hidden />
 
       <dl className="stats-card-inner relative">
         <dt className="sr-only">{label}</dt>
+        <span className="stats-card-index font-mono" aria-hidden>
+          {String(index + 1).padStart(2, "0")}
+        </span>
         <dd className="stats-card-value m-0 font-mono tabular-nums">{value}</dd>
         <dd className="stats-card-label m-0">{label}</dd>
       </dl>
-
-      <span className="stats-card-index font-mono" aria-hidden>
-        {String(index + 1).padStart(2, "0")}
-      </span>
     </article>
   );
 }
@@ -54,7 +54,8 @@ export function Stats() {
       className="stats-section section-band section-y-sm relative overflow-hidden"
       aria-labelledby="stats-heading"
     >
-      <div className="stats-section-glow pointer-events-none absolute inset-0" aria-hidden />
+      <SectionAtmosphere variant="default" />
+      <div className="stats-section-ambient pointer-events-none absolute inset-0" aria-hidden />
 
       <Container className="relative">
         <div className="stats-section-header section-head mx-auto max-w-lg text-center">
@@ -64,7 +65,7 @@ export function Stats() {
           </h2>
         </div>
 
-        <MotionStagger className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
+        <MotionStagger className="stats-grid">
           {statValues.map(({ value, key }, i) => (
             <MotionItem key={key} className="h-full">
               <StatCard
