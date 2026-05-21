@@ -19,7 +19,7 @@ export function AutomationFlow() {
   const t = useTranslations("flow");
 
   return (
-    <section className="relative overflow-hidden bg-black py-20 sm:py-32">
+    <section className="section-y relative overflow-hidden bg-black">
       <motion.div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(227_42_57/0.08),transparent_70%)]"
         animate={{ opacity: [0.6, 1, 0.6] }}
@@ -31,7 +31,7 @@ export function AutomationFlow() {
           badge={t("badge")}
           title={t("title")}
           subtitle={t("subtitle")}
-          className="mb-16"
+          className="mb-14 sm:mb-16"
         />
 
         <div className="relative">
@@ -52,10 +52,10 @@ export function AutomationFlow() {
                       <Icon className="h-5 w-5" />
                     </motion.div>
                   </div>
-                  <h3 className="text-lg font-semibold text-off-white">
+                  <h3 className="text-lg font-semibold tracking-tight text-off-white">
                     {t(`steps.${key}.title`)}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-off-white/55">
+                  <p className="text-body mt-3">
                     {t(`steps.${key}.description`)}
                   </p>
                 </motion.div>

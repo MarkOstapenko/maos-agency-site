@@ -15,10 +15,10 @@ export function ServicesProcess() {
   const t = useTranslations("servicesPage.process");
 
   return (
-    <section className="relative overflow-hidden border-y border-white/[0.06] bg-black py-20 sm:py-32">
+    <section className="section-y relative overflow-hidden border-y border-white/[0.05] bg-black">
       <div className="red-glow-spot pointer-events-none absolute inset-0" />
       <Container className="relative">
-        <SectionHeading title={t("title")} subtitle={t("subtitle")} className="mb-14" />
+        <SectionHeading title={t("title")} subtitle={t("subtitle")} className="mb-14 sm:mb-16" />
 
         <div className="relative">
           <div className="pointer-events-none absolute left-0 right-0 top-1/2 hidden h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent lg:block" />
@@ -41,10 +41,10 @@ export function ServicesProcess() {
                         <Icon className="h-5 w-5" />
                       </motion.div>
                     </div>
-                    <h3 className="text-lg font-semibold text-off-white">
+                    <h3 className="text-lg font-semibold tracking-tight text-off-white">
                       {t(`steps.${key}.title`)}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-off-white/55">
+                    <p className="text-body mt-3">
                       {t(`steps.${key}.description`)}
                     </p>
                   </motion.div>

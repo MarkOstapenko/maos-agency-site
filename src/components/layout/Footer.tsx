@@ -5,19 +5,21 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MotionReveal } from "@/components/ui/motion";
 
-export async function Footer() {
+export async function Footer({ className }: { className?: string }) {
   const t = await getTranslations("footer");
   const nav = await getTranslations("nav");
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/[0.06] bg-surface">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+    <footer
+      className={`relative border-t border-white/5 bg-surface/90 backdrop-blur-sm ${className ?? ""}`}
+    >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <MotionReveal variant="fadeUp">
             <div>
-              <p className="text-lg font-semibold tracking-tight text-off-white">
+              <p className="text-xl font-semibold tracking-tight text-off-white">
                 {BRAND.name}
               </p>
               <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">

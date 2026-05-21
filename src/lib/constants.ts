@@ -1,5 +1,6 @@
 export const BRAND = {
   name: "MaOs AI Agency",
+  logo: "/logo.png",
   telegram: "https://t.me/MaOs_Agency",
   telegramHandle: "@MaOs_Agency",
 } as const;

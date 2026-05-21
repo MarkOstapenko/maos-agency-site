@@ -41,17 +41,17 @@ export function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mt-6 font-bold leading-[1] tracking-[-0.03em] text-off-white sm:mt-8 sm:leading-[0.95]"
+              className="text-display mt-7 leading-[1.02] sm:mt-9 sm:leading-[0.98]"
             >
-              <span className="block text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
+              <span className="block text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem]">
                 {t("headlineLine1")}
               </span>
-              <span className="mt-1 block text-[2rem] sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+              <span className="mt-1.5 block text-[1.85rem] sm:text-[3.25rem] lg:text-[3.75rem] xl:text-[4.75rem]">
                 <span className="text-gradient-hero text-glow-red break-words">
                   {t("headlineHighlight")}
                 </span>
               </span>
-              <span className="mt-1 block text-3xl text-off-white/85 sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
+              <span className="mt-1.5 block text-3xl text-off-white/90 sm:text-5xl lg:text-[3.5rem] xl:text-[4rem]">
                 {t("headlineLine2")}
               </span>
             </motion.h1>
@@ -61,9 +61,9 @@ export function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="premium-accent-line mt-6 max-w-xl sm:mt-8"
+              className="premium-accent-line mt-7 max-w-xl sm:mt-9"
             >
-              <p className="text-sm leading-[1.7] text-muted sm:text-base md:text-lg">
+              <p className="text-body-lg max-w-lg">
                 {t("subheadline")}
               </p>
             </motion.div>
@@ -92,14 +92,14 @@ export function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mt-8 grid grid-cols-3 gap-2 sm:mt-12 sm:gap-4 md:gap-6"
+              className="mt-10 grid grid-cols-3 gap-2.5 sm:mt-14 sm:gap-4 md:gap-5"
             >
               {trustKeys.map((key) => (
-                <div key={key} className="premium-stat min-w-0 sm:px-4 md:px-5">
-                  <p className="font-mono text-base font-semibold tracking-tight text-primary sm:text-lg md:text-xl">
+                <div key={key} className="premium-stat min-w-0 sm:px-5">
+                  <p className="font-mono text-base font-semibold tracking-[-0.02em] text-primary sm:text-lg md:text-xl">
                     {t(`trust.${key}.value`)}
                   </p>
-                  <p className="mt-1 break-words text-[9px] leading-tight text-subtle sm:text-[10px] md:text-xs">
+                  <p className="text-caption mt-1.5 break-words">
                     {t(`trust.${key}.label`)}
                   </p>
                 </div>
@@ -114,9 +114,9 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="relative min-w-0 lg:pl-4"
           >
-            <div className="absolute -inset-6 rounded-full bg-primary/25 blur-[80px] shadow-[0_0_120px_rgb(227_42_57/0.35)] sm:-inset-12 sm:blur-[100px]" />
+            <div className="absolute -inset-6 rounded-full bg-primary/15 blur-[72px] sm:-inset-10 sm:blur-[88px]" />
             <div
-              className="absolute inset-0 rounded-[2rem] border border-primary/20 opacity-60"
+              className="absolute inset-0 rounded-[2rem] border border-primary/15 opacity-50"
               style={{ animation: "hero-pulse-ring 4s ease-in-out infinite" }}
             />
             <DashboardPreview />
@@ -129,9 +129,9 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="mx-auto mt-8 flex flex-col items-center gap-2 text-off-white/30 transition-colors hover:text-primary/80 lg:mt-4"
+          className="mx-auto mt-10 flex flex-col items-center gap-2 text-subtle transition-colors hover:text-primary/70 lg:mt-6"
         >
-          <span className="text-[10px] font-medium uppercase tracking-[0.25em]">
+          <span className="text-caption uppercase tracking-[0.25em]">
             {t("scroll")}
           </span>
           <motion.span

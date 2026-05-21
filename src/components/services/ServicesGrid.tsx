@@ -38,7 +38,7 @@ export function ServicesGrid() {
         title={heading("gridTitle")}
         subtitle={heading("gridSubtitle")}
         align="left"
-        className="mb-12"
+        className="mb-14 sm:mb-16"
       />
 
       <MotionStagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -72,13 +72,15 @@ export function ServicesGrid() {
                   >
                     <Icon className="h-7 w-7" />
                   </div>
-                  <span className="font-mono text-xs text-off-white/25">
+                  <span className="font-mono text-xs text-subtle">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-off-white">{t(`${key}.title`)}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-off-white/55">
+                <h3 className="text-lg font-semibold tracking-tight text-off-white sm:text-xl">
+                  {t(`${key}.title`)}
+                </h3>
+                <p className="text-body mt-4 flex-1">
                   {t(`${key}.description`)}
                 </p>
 
@@ -86,7 +88,7 @@ export function ServicesGrid() {
                   {tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[11px] text-off-white/55"
+                      className="rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 font-mono text-[11px] text-muted"
                     >
                       {tag}
                     </span>

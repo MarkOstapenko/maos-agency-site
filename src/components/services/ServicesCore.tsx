@@ -11,7 +11,7 @@ export function ServicesCore() {
   const t = useTranslations("servicesPage.core");
 
   return (
-    <section className="relative -mt-4 pb-16 sm:pb-20">
+    <section className="relative -mt-2 pb-20 sm:pb-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 32 }}
@@ -29,10 +29,8 @@ export function ServicesCore() {
                 <Cpu className="h-3.5 w-3.5" />
                 {t("badge")}
               </span>
-              <h2 className="mt-4 text-xl font-bold leading-tight text-off-white sm:mt-5 sm:text-3xl lg:text-4xl">
-                {t("title")}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-off-white/55 sm:mt-4 sm:text-base md:text-lg">
+              <h2 className="text-display-sm mt-5 sm:mt-6">{t("title")}</h2>
+              <p className="text-body-lg mt-4 max-w-xl sm:mt-5">
                 {t("description")}
               </p>
             </div>
@@ -50,7 +48,9 @@ export function ServicesCore() {
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-primary/20">
                     <Check className="h-3.5 w-3.5 text-primary" />
                   </span>
-                  <span className="text-sm text-off-white/80">{t(`features.${key}`)}</span>
+                  <span className="text-sm leading-relaxed text-off-white/85 sm:text-base">
+                    {t(`features.${key}`)}
+                  </span>
                 </motion.li>
               ))}
             </ul>

@@ -66,7 +66,7 @@ export function SocialLinks({
                 </motion.div>
                 <div className="min-w-0">
                   {showLabels && (
-                    <p className="text-xs text-off-white/40">{t(id)}</p>
+                    <p className="text-caption">{t(id)}</p>
                   )}
                   <p className="truncate text-sm font-medium text-off-white">{handle}</p>
                 </div>
@@ -92,7 +92,7 @@ export function SocialLinks({
             title={t(id)}
             whileHover={{ scale: 1.08, y: -3 }}
             whileTap={tapScale}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-off-white/60 transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-muted transition-colors hover:border-primary/30 hover:bg-primary/[0.06] hover:text-primary"
           >
             <Icon className="h-[18px] w-[18px]" />
           </motion.a>

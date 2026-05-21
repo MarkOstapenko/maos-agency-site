@@ -12,7 +12,7 @@ export function ServicesIntegrations() {
   const items = t.raw("items") as string[];
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="section-y">
       <Container>
         <SectionHeading
           title={t("title")}
@@ -24,9 +24,9 @@ export function ServicesIntegrations() {
           {items.map((item) => (
             <MotionItem key={item}>
               <motion.span
-                whileHover={{ scale: 1.06, y: -4 }}
+                whileHover={{ scale: 1.03, y: -3 }}
                 whileTap={tapScale}
-                className="inline-block cursor-default rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 font-mono text-sm text-off-white/70 backdrop-blur-sm transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-off-white"
+                className="pill-tag"
               >
                 {item}
               </motion.span>

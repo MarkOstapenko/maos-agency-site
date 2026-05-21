@@ -29,7 +29,7 @@ export function LanguageSwitcher({ className, size = "md" }: LanguageSwitcherPro
       role="group"
       aria-label={t("language")}
       className={cn(
-        "inline-flex items-center rounded-full border border-white/[0.08] bg-black/50 p-0.5",
+        "inline-flex items-center rounded-full border border-white/[0.06] bg-black/40 p-0.5",
         "shadow-[inset_0_1px_0_0_rgb(255_255_255/0.04)]",
         className
       )}
@@ -48,7 +48,7 @@ export function LanguageSwitcher({ className, size = "md" }: LanguageSwitcherPro
               padding,
               text,
               isActive
-                ? "bg-primary text-off-white shadow-[0_0_12px_rgb(227_42_57/0.3)]"
+                ? "bg-primary text-off-white shadow-[0_0_10px_rgb(227_42_57/0.22)]"
                 : "text-subtle hover:text-off-white"
             )}
           >

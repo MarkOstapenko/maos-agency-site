@@ -15,9 +15,9 @@ export function Features() {
   const t = useTranslations("features");
 
   return (
-    <section className="py-16 sm:py-28">
+    <section className="section-y">
       <Container>
-        <SectionHeading title={t("title")} subtitle={t("subtitle")} className="mb-16" />
+        <SectionHeading title={t("title")} subtitle={t("subtitle")} className="mb-14 sm:mb-16" />
 
         <MotionStagger className="grid gap-6 sm:grid-cols-2 lg:gap-8">
           {featureKeys.map((key, i) => {
@@ -35,10 +35,10 @@ export function Features() {
                   >
                     <Icon className="h-6 w-6" />
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-off-white">
+                  <h3 className="text-lg font-semibold tracking-tight text-off-white sm:text-xl">
                     {t(`items.${key}.title`)}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-off-white/55">
+                  <p className="text-body mt-4">
                     {t(`items.${key}.description`)}
                   </p>
                 </motion.article>

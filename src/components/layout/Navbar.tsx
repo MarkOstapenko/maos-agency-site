@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { BRAND } from "@/lib/constants";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { TelegramButton } from "@/components/ui/TelegramButton";
 
 const navLinks = [
@@ -29,17 +30,16 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="premium-nav mt-3 flex items-center justify-between gap-2 sm:mt-4 sm:gap-3">
+        <nav className="premium-nav mt-4 flex items-center justify-between gap-2 sm:mt-5 sm:gap-3">
           <Link href="/" className="group flex min-w-0 max-w-[55%] items-center gap-2.5 sm:max-w-none">
             <motion.span
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/25 to-primary/5 text-sm font-bold text-primary shadow-[0_0_20px_rgb(227_42_57/0.2)]"
+              className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/8 bg-black/40 p-1"
             >
-              <span className="absolute inset-0 bg-gradient-to-t from-transparent to-white/10" />
-              <span className="relative">M</span>
+              <BrandLogo size={28} priority />
             </motion.span>
-            <span className="hidden truncate text-sm font-semibold tracking-tight text-off-white min-[400px]:inline">
+            <span className="hidden truncate text-sm font-medium tracking-tight text-off-white min-[400px]:inline">
               {BRAND.name}
             </span>
           </Link>
@@ -62,7 +62,7 @@ export function Navbar() {
 
             <button
               type="button"
-              className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-2 text-off-white/80 transition-colors hover:border-white/15 hover:text-off-white lg:hidden"
+              className="rounded-xl border border-white/8 bg-white/3 p-2 text-muted transition-colors hover:border-white/15 hover:text-off-white lg:hidden"
               onClick={() => setOpen(!open)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
@@ -87,7 +87,7 @@ export function Navbar() {
                     key={key}
                     href={href}
                     onClick={() => setOpen(false)}
-                    className="rounded-xl px-3 py-3 text-[15px] font-medium text-off-white/75 transition-colors hover:bg-white/[0.04] hover:text-off-white"
+                    className="rounded-xl px-3 py-3 text-[15px] font-medium text-muted transition-colors hover:bg-white/4 hover:text-off-white"
                   >
                     {t(key)}
                   </Link>

@@ -13,13 +13,13 @@ export function AboutContact() {
   const t = useTranslations("aboutPage.contact");
 
   return (
-    <section id="contact" className="relative overflow-hidden py-20 sm:py-28">
-      <div className="red-glow-bg pointer-events-none absolute inset-0 opacity-50" />
+    <section id="contact" className="section-y relative overflow-hidden">
+      <div className="red-glow-bg pointer-events-none absolute inset-0 opacity-35" />
       <Container className="relative">
         <SectionHeading
           title={t("title")}
           subtitle={t("subtitle")}
-          className="mb-12"
+          className="mb-14 sm:mb-16"
         />
 
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
@@ -47,7 +47,7 @@ export function AboutContact() {
                   <p className="break-all text-xl font-bold text-off-white sm:text-2xl md:text-3xl">
                     {t("telegramHandle")}
                   </p>
-                  <p className="mt-1 text-sm text-off-white/50">{t("telegramHint")}</p>
+                  <p className="text-caption mt-1">{t("telegramHint")}</p>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ export function AboutContact() {
               className="premium-card p-5 sm:p-6"
             >
               <Cpu className="mb-3 h-6 w-6 text-primary" />
-              <p className="text-xs uppercase tracking-widest text-off-white/40">
+              <p className="premium-label">
                 {t("service")}
               </p>
               <p className="mt-2 text-base font-medium leading-snug text-off-white">
@@ -79,7 +79,7 @@ export function AboutContact() {
               className="premium-card p-5 sm:p-6"
             >
               <Clock className="mb-3 h-6 w-6 text-primary" />
-              <p className="text-xs uppercase tracking-widest text-off-white/40">
+              <p className="premium-label">
                 {t("response")}
               </p>
               <p className="mt-2 font-mono text-xl font-semibold text-primary">
@@ -97,7 +97,7 @@ export function AboutContact() {
           transition={{ delay: 0.18 }}
           className="mt-8"
         >
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-off-white/50">
+          <h3 className="premium-label mb-5">
             {t("socialTitle")}
           </h3>
           <SocialLinks variant="cards" />
@@ -115,7 +115,7 @@ export function AboutContact() {
             <h3 className="text-lg font-semibold text-off-white">{t("checklistTitle")}</h3>
             <ul className="mt-5 space-y-3">
               {checklistKeys.map((key) => (
-                <li key={key} className="flex items-start gap-3 text-sm text-off-white/60">
+                <li key={key} className="text-body flex items-start gap-3">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary/20">
                     <Check className="h-3 w-3 text-primary" />
                   </span>
@@ -125,7 +125,7 @@ export function AboutContact() {
             </ul>
           </div>
           <div className="flex flex-col items-start gap-4 lg:items-end">
-            <p className="max-w-sm text-sm text-off-white/45 lg:text-right">
+            <p className="text-body max-w-sm lg:text-right">
               {t("subtitle")}
             </p>
             <TelegramButton size="lg" className="btn-shine w-full sm:w-auto">

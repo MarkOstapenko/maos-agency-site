@@ -15,10 +15,10 @@ export function AboutValues() {
   const t = useTranslations("aboutPage.values");
 
   return (
-    <section className="relative border-y border-white/[0.06] bg-surface py-20 sm:py-32">
+    <section className="section-band section-y relative">
       <div className="red-glow-spot pointer-events-none absolute inset-0" />
       <Container className="relative">
-        <SectionHeading title={t("title")} className="mb-14" />
+        <SectionHeading title={t("title")} className="mb-14 sm:mb-16" />
 
         <MotionStagger className="grid gap-6 md:grid-cols-3">
           {valueKeys.map((key, i) => {
@@ -36,14 +36,14 @@ export function AboutValues() {
                     >
                       <Icon className="h-6 w-6" />
                     </motion.div>
-                    <span className="font-mono text-xs text-off-white/25">
+                    <span className="font-mono text-xs text-subtle">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-off-white">
+                  <h3 className="text-lg font-semibold tracking-tight text-off-white">
                     {t(`items.${key}.title`)}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-off-white/55">
+                  <p className="text-body mt-4">
                     {t(`items.${key}.description`)}
                   </p>
                 </motion.div>

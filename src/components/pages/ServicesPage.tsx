@@ -13,7 +13,7 @@ export function ServicesPage() {
     <>
       <ServicesHero />
       <ServicesCore />
-      <section className="pb-20 sm:pb-28">
+      <section className="section-y-sm pt-0">
         <Container>
           <ServicesGrid />
         </Container>

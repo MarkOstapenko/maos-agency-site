@@ -15,15 +15,15 @@ export function Stats() {
   const t = useTranslations("stats");
 
   return (
-    <section id="stats" className="border-y border-white/[0.06] bg-surface py-14 sm:py-20">
+    <section id="stats" className="section-band section-y-sm">
       <Container>
         <MotionStagger className="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
           {statValues.map(({ value, key }) => (
             <MotionItem key={key} className="text-center">
-              <p className="text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">
+              <p className="font-mono text-3xl font-semibold tracking-[-0.03em] text-primary sm:text-4xl lg:text-[2.75rem]">
                 {value}
               </p>
-              <p className="mt-2 text-sm text-muted">{t(key)}</p>
+              <p className="text-caption mt-3">{t(key)}</p>
             </MotionItem>
           ))}
         </MotionStagger>

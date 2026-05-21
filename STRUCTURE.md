@@ -19,8 +19,6 @@ Site MaOs/
 │   │           └── page.tsx  # About → AboutPage
 │   │
 │   ├── components/
-│   │   ├── index.ts          # public exports
-│   │   │
 │   │   ├── layout/           # глобальний каркас
 │   │   │   ├── index.ts
 │   │   │   ├── Navbar.tsx

@@ -36,7 +36,7 @@ export function TelegramButton({
       href={BRAND.telegram}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ scale: 1.03, y: -1 }}
+      whileHover={{ scale: 1.02, y: -2 }}
       whileTap={tapScale}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className={cn(variants[variant], sizes[size], className)}

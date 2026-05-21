@@ -1,27 +1,13 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
-import {
-  fadeUp,
-  fadeIn,
-  scaleIn,
-  slideInLeft,
-  slideInRight,
-  staggerContainer,
-  viewport,
-  cardHover,
-  tapScale,
-} from "@/lib/motion";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeUp, fadeIn, staggerContainer, viewport } from "@/lib/motion";
 
-type VariantName = "fadeUp" | "fadeIn" | "scaleIn" | "slideLeft" | "slideRight";
+type VariantName = "fadeUp" | "fadeIn";
 
 const variantMap = {
   fadeUp,
   fadeIn,
-  scaleIn,
-  slideLeft: slideInLeft,
-  slideRight: slideInRight,
 };
 
 type MotionRevealProps = {
@@ -76,31 +62,6 @@ export function MotionStagger({
     >
       {children}
     </Component>
-  );
-}
-
-type MotionHoverCardProps = HTMLMotionProps<"div"> & {
-  children: React.ReactNode;
-};
-
-export function MotionHoverCard({
-  children,
-  className,
-  ...props
-}: MotionHoverCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={viewport}
-      whileHover={cardHover}
-      whileTap={tapScale}
-      transition={{ duration: 0.5 }}
-      className={cn(className)}
-      {...props}
-    >
-      {children}
-    </motion.div>
   );
 }
 
