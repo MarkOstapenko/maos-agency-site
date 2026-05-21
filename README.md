@@ -48,7 +48,12 @@ Summary:
 3. Deploy (Next.js auto-detected)
 4. Optionally set `NEXT_PUBLIC_SITE_URL` → your production URL
 
-No secrets required. Telegram & social links are in `src/lib/constants.ts`.
+Public links are in `src/lib/constants.ts`. For the **contact form** (sends leads to Telegram), set in `.env.local` or Vercel:
+
+- `TELEGRAM_BOT_TOKEN` — from [@BotFather](https://t.me/BotFather)
+- `TELEGRAM_CHAT_ID` — your chat or group ID (see `.env.example`)
+
+Without these variables the form shows a friendly error and links to Telegram.
 
 ## Project structure
 

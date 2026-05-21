@@ -1,37 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { BRAND } from "@/lib/constants";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { MobileMenu } from "./MobileMenu";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { TelegramButton } from "@/components/ui/TelegramButton";
-
-const navLinks = [
-  { href: "/", key: "home" as const },
-  { href: "/services", key: "services" as const },
-  { href: "/about", key: "about" as const },
-];
+import { NAV_LINKS } from "@/lib/nav-links";
+import { useLenis } from "./smooth-scroll";
 
 export function Navbar() {
   const t = useTranslations("nav");
+  const lenis = useLenis();
   const [open, setOpen] = useState(false);
+  const menuButtonId = useId();
+
+  const closeMenu = () => setOpen(false);
+  const toggleMenu = () => setOpen((prev) => !prev);
 
   useEffect(() => {
+    if (lenis) {
+      if (open) lenis.stop();
+      else lenis.start();
+      return () => lenis.start();
+    }
+
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, lenis]);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="premium-nav mt-4 flex items-center justify-between gap-2 sm:mt-5 sm:gap-3">
-          <Link href="/" className="group flex min-w-0 max-w-[55%] items-center gap-2.5 sm:max-w-none">
+    <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top,0px)]">
+      <div className="mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 lg:px-8">
+        <nav className="premium-nav mt-3 flex items-center justify-between gap-2 sm:mt-5 sm:gap-3">
+          <Link href="/" className="group flex min-w-0 max-w-[62%] items-center gap-2 sm:max-w-none">
             <motion.span
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
@@ -39,13 +57,13 @@ export function Navbar() {
             >
               <BrandLogo size={28} priority />
             </motion.span>
-            <span className="hidden truncate text-sm font-medium tracking-tight text-off-white min-[400px]:inline">
+            <span className="truncate text-sm font-medium tracking-tight text-off-white max-[359px]:text-[13px]">
               {BRAND.name}
             </span>
           </Link>
 
           <div className="hidden items-center gap-10 lg:flex">
-            {navLinks.map(({ href, key }) => (
+            {NAV_LINKS.map(({ href, key }) => (
               <Link key={key} href={href} className="nav-link group relative">
                 {t(key)}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -54,51 +72,32 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <LanguageSwitcher className="shrink-0" />
+            <LanguageSwitcher className="hidden shrink-0 lg:inline-flex" />
 
             <div className="hidden md:flex">
               <TelegramButton size="sm">{t("cta")}</TelegramButton>
             </div>
 
             <button
+              id={menuButtonId}
               type="button"
-              className="rounded-xl border border-white/8 bg-white/3 p-2 text-muted transition-colors hover:border-white/15 hover:text-off-white lg:hidden"
-              onClick={() => setOpen(!open)}
-              aria-label={open ? "Close menu" : "Open menu"}
+              className="touch-target relative z-[51] flex shrink-0 items-center justify-center rounded-xl border border-white/8 bg-white/3 text-muted transition-colors hover:border-white/15 hover:text-off-white active:bg-white/6 lg:hidden"
+              onClick={toggleMenu}
+              aria-label={open ? t("closeMenu") : t("openMenu")}
               aria-expanded={open}
+              aria-controls="mobile-menu-dialog"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </nav>
-
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.25 }}
-              className="premium-card mt-2 overflow-hidden p-4 lg:hidden"
-            >
-              <div className="flex flex-col gap-1">
-                {navLinks.map(({ href, key }) => (
-                  <Link
-                    key={key}
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-xl px-3 py-3 text-[15px] font-medium text-muted transition-colors hover:bg-white/4 hover:text-off-white"
-                  >
-                    {t(key)}
-                  </Link>
-                ))}
-                <div className="premium-divider my-3" />
-                <TelegramButton className="w-full">{t("cta")}</TelegramButton>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+
+      <MobileMenu
+        open={open}
+        onClose={closeMenu}
+        menuButtonId={menuButtonId}
+      />
     </header>
   );
 }

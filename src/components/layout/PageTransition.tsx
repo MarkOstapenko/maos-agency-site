@@ -7,7 +7,13 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { usePathname } from "@/i18n/navigation";
-import { pageCurtain, pageTransition } from "@/lib/motion";
+import {
+  pageCurtain,
+  pageTransition,
+  pageTransitionMobile,
+} from "@/lib/motion";
+import { useIsMobile } from "@/hooks/useMediaQuery";
+import { scrollForRouteChange, useLenis } from "./smooth-scroll";
 
 type PageTransitionProps = {
   children: React.ReactNode;
@@ -16,33 +22,50 @@ type PageTransitionProps = {
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const isMobile = useIsMobile();
+  const lenis = useLenis();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!lenis) return;
+
+    scrollForRouteChange(lenis, window.location.hash);
+
+    const main = document.getElementById("main");
+    requestAnimationFrame(() => main?.focus({ preventScroll: true }));
+  }, [pathname, lenis]);
 
   if (reduceMotion) {
     return <div className="page-transition-shell">{children}</div>;
   }
 
+  const variants = isMobile ? pageTransitionMobile : pageTransition;
+
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence initial={false}>
       <motion.div
         key={pathname}
         className="page-transition-shell"
         initial="hidden"
         animate="visible"
-        exit="exit"
-        variants={pageTransition}
+        variants={variants}
+        onAnimationComplete={() => {
+          requestAnimationFrame(() => {
+            lenis?.resize();
+            const hash = window.location.hash;
+            if (hash) scrollForRouteChange(lenis, hash);
+          });
+        }}
       >
-        <motion.div
-          className="page-transition-curtain"
-          aria-hidden
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={pageCurtain}
-        />
+        {!isMobile && (
+          <motion.div
+            className="page-transition-curtain"
+            aria-hidden
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={pageCurtain}
+          />
+        )}
         <div className="page-transition-content">{children}</div>
       </motion.div>
     </AnimatePresence>

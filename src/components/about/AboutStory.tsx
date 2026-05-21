@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { BRAND } from "@/lib/constants";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Container } from "@/components/ui/Container";
+import { PremiumCard } from "@/components/ui/PremiumCard";
 
 export function AboutStory() {
   const t = useTranslations("aboutPage.story");
@@ -19,21 +20,21 @@ export function AboutStory() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="premium-card border-glow relative overflow-hidden border-primary/15 p-6 sm:p-10"
           >
-            <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/20 blur-[60px]" />
-            <div className="relative">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/8 bg-black/50 p-2">
-                <BrandLogo size={48} />
+            <PremiumCard featured className="h-full">
+              <div className="card-pad-lg">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/8 bg-black/50 p-2">
+                  <BrandLogo size={48} />
+                </div>
+                <p className="text-xl font-bold text-off-white">{BRAND.name}</p>
+                <p className="mt-2 font-mono text-sm text-primary">{BRAND.telegramHandle}</p>
+                <div className="mt-8 flex gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_rgb(227_42_57/0.8)]" />
+                  <span className="h-2 w-2 rounded-full bg-white/20" />
+                  <span className="h-2 w-2 rounded-full bg-white/20" />
+                </div>
               </div>
-              <p className="text-xl font-bold text-off-white">{BRAND.name}</p>
-              <p className="mt-2 font-mono text-sm text-primary">{BRAND.telegramHandle}</p>
-              <div className="mt-8 flex gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_rgb(227_42_57/0.8)]" />
-                <span className="h-2 w-2 rounded-full bg-white/20" />
-                <span className="h-2 w-2 rounded-full bg-white/20" />
-              </div>
-            </div>
+            </PremiumCard>
           </motion.div>
 
           <motion.div
@@ -44,7 +45,7 @@ export function AboutStory() {
           >
             <h2 className="text-display-sm">{t("title")}</h2>
 
-            <blockquote className="mt-6 flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/[0.06] p-4 sm:flex-row sm:gap-4 sm:p-5">
+            <blockquote className="premium-card-inset mt-6 flex flex-col gap-3 p-4 sm:flex-row sm:gap-4 sm:p-5">
               <Quote className="h-7 w-7 shrink-0 text-primary/60 sm:h-8 sm:w-8" />
               <p className="text-base italic leading-relaxed text-off-white/80 sm:text-lg">
                 {t("quote")}

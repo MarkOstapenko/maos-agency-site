@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Activity,
   Bot,
@@ -39,6 +39,7 @@ function Sparkline() {
 
 export function DashboardPreview() {
   const t = useTranslations("dashboard");
+  const reduceMotion = useReducedMotion();
   const pipelineSteps = t.raw("pipeline.steps") as string[];
 
   return (
@@ -84,8 +85,8 @@ export function DashboardPreview() {
       <div className="absolute -inset-1 rounded-[1.75rem] bg-gradient-to-br from-primary/18 via-transparent to-primary/6 blur-sm" />
 
       <motion.div
-        className="premium-card border-glow relative overflow-hidden p-5 sm:p-6"
-        animate={{ y: [0, -6, 0] }}
+        className="premium-card premium-card-featured relative overflow-hidden p-4 sm:p-6"
+        animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
         <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />

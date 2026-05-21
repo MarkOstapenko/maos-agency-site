@@ -12,7 +12,14 @@ export function Container({
   as: Tag = "div",
 }: ContainerProps) {
   return (
-    <Tag className={cn("mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-8", className)}>
+    <Tag
+      className={cn(
+        "mx-auto w-full min-w-0 max-w-7xl",
+        "pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]",
+        "sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8",
+        className
+      )}
+    >
       {children}
     </Tag>
   );

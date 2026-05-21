@@ -1,8 +1,14 @@
+/** Canonical brand palette — keep in sync with @theme in globals.css */
 export const BRAND = {
   name: "MaOs AI Agency",
   logo: "/logo.png",
   telegram: "https://t.me/MaOs_Agency",
   telegramHandle: "@MaOs_Agency",
+  colors: {
+    black: "#050505",
+    primary: "#E32A39",
+    offWhite: "#FBFBEF",
+  },
 } as const;
 
 export const SOCIAL_LINKS = [

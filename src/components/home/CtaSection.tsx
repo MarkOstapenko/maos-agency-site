@@ -1,38 +1,54 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { Container } from "@/components/ui/Container";
-import { TelegramButton } from "@/components/ui/TelegramButton";
-import { GlowOrb } from "@/components/ui/GlowOrb";
-import { scaleIn } from "@/lib/motion";
-
-export function CtaSection() {
-  const t = useTranslations("cta");
-
-  return (
-    <section className="section-y relative overflow-hidden">
-      <GlowOrb className="left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 sm:h-80 sm:w-80" />
-
-      <Container className="relative max-w-3xl">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-64px" }}
-          variants={scaleIn}
-          className="cta-panel glow-red"
-        >
-          <h2 className="text-display-sm">{t("title")}</h2>
-          <div className="premium-divider mx-auto mt-6 max-w-[8rem]" />
-          <p className="text-body-lg mx-auto mt-6 max-w-md">{t("subtitle")}</p>
-          <div className="mt-9 flex justify-center sm:mt-10">
-            <TelegramButton size="lg" className="btn-shine">
-              {t("button")}
-            </TelegramButton>
-          </div>
-        </motion.div>
-      </Container>
-    </section>
-  );
-}
-
+"use client";
+
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { ContactForm } from "@/components/contact";
+import { Container } from "@/components/ui/Container";
+import { GlowOrb } from "@/components/ui/GlowOrb";
+import { Parallax, ParallaxSection, ParallaxScroll } from "@/components/ui/Parallax";
+import { scaleIn } from "@/lib/motion";
+
+export function CtaSection() {
+  const t = useTranslations("cta");
+
+  return (
+    <ParallaxSection id="contact" className="section-y section-defer relative overflow-hidden">
+      <ParallaxScroll speed="medium" className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <GlowOrb className="h-72 w-72 sm:h-80 sm:w-80" />
+      </ParallaxScroll>
+
+      <Container className="relative max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-64px" }}
+          variants={scaleIn}
+          className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10"
+        >
+          <Parallax speed="slow">
+            <div className="premium-card premium-card-interactive cta-panel glow-red group relative flex flex-col justify-center lg:sticky lg:top-28">
+              <div className="premium-card-glow pointer-events-none" aria-hidden />
+              <div className="relative px-6 py-10 sm:px-10 sm:py-12">
+                <h2 className="text-display-sm">{t("title")}</h2>
+                <div className="premium-divider mt-6 max-w-[8rem]" />
+                <p className="text-body-lg mt-6 max-w-md">{t("subtitle")}</p>
+                <ul className="mt-8 space-y-3">
+                  {(["point1", "point2", "point3"] as const).map((key) => (
+                    <li key={key} className="text-body flex items-start gap-2 text-sm">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {t(key)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Parallax>
+
+          <Parallax speed="lift">
+            <ContactForm source="home-cta" />
+          </Parallax>
+        </motion.div>
+      </Container>
+    </ParallaxSection>
+  );
+}

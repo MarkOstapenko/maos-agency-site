@@ -13,16 +13,28 @@ const locales = [
 type LanguageSwitcherProps = {
   className?: string;
   size?: "sm" | "md";
+  variant?: "default" | "menu";
+  onLocaleChange?: () => void;
 };
 
-export function LanguageSwitcher({ className, size = "md" }: LanguageSwitcherProps) {
+export function LanguageSwitcher({
+  className,
+  size = "md",
+  variant = "default",
+  onLocaleChange,
+}: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("nav");
 
-  const padding = size === "sm" ? "px-3 py-2" : "px-3.5 py-2";
-  const text = size === "sm" ? "text-[10px]" : "text-[11px]";
+  const isMenu = variant === "menu";
+  const padding = isMenu
+    ? "min-h-[48px] min-w-[4.5rem] px-5 py-2.5"
+    : size === "sm"
+      ? "min-h-[44px] px-3.5 py-2"
+      : "min-h-[44px] px-4 py-2";
+  const text = isMenu ? "text-sm" : "text-[11px]";
 
   return (
     <div
@@ -31,6 +43,7 @@ export function LanguageSwitcher({ className, size = "md" }: LanguageSwitcherPro
       className={cn(
         "inline-flex items-center rounded-full border border-white/[0.06] bg-black/40 p-0.5",
         "shadow-[inset_0_1px_0_0_rgb(255_255_255/0.04)]",
+        isMenu && "mobile-menu-lang border-white/10 bg-black/60 p-1",
         className
       )}
     >
@@ -42,7 +55,10 @@ export function LanguageSwitcher({ className, size = "md" }: LanguageSwitcherPro
             type="button"
             aria-pressed={isActive}
             aria-label={`${label} — ${t("language")}`}
-            onClick={() => router.replace(pathname, { locale: code })}
+            onClick={() => {
+              router.replace(pathname, { locale: code });
+              onLocaleChange?.();
+            }}
             className={cn(
               "rounded-full font-semibold uppercase tracking-[0.12em] transition-all duration-300",
               padding,

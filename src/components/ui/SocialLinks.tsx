@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { SOCIAL_LINKS, type SocialId } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
-import { cardHover, tapScale } from "@/lib/motion";
+import { tapScale } from "@/lib/motion";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -54,16 +54,16 @@ export function SocialLinks({
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={cardHover}
+                aria-label={`${t(id)} (${handle}, opens in new tab)`}
                 whileTap={tapScale}
-                className="glass group flex items-center gap-3 rounded-2xl border border-white/10 p-4 transition-colors hover:border-primary/30 hover:bg-primary/5"
+                className={cn(
+                  "premium-card premium-card-interactive group flex items-center gap-3 p-4"
+                )}
               >
-                <motion.div
-                  whileHover={{ rotate: 6, scale: 1.08 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary"
-                >
+                <div className="premium-card-glow pointer-events-none" aria-hidden />
+                <div className="premium-card-icon h-10 w-10 transition-transform duration-500 group-hover:rotate-3">
                   <Icon className="h-5 w-5" />
-                </motion.div>
+                </div>
                 <div className="min-w-0">
                   {showLabels && (
                     <p className="text-caption">{t(id)}</p>

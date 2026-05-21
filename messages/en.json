@@ -1,14 +1,29 @@
 {
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "loader": {
+    "tagline": "AI Automation Agency",
+    "progressLabel": "BOOT",
+    "steps": {
+      "s0": "Initializing AI systems...",
+      "s1": "Loading automation core...",
+      "s2": "MaOs AI Agency"
+    }
+  },
   "meta": {
-    "title": "MaOs AI Agency — AI automation systems for business",
-    "description": "We build turnkey AI systems. Automate sales, leads, CRM, and routine workflows with AI."
+    "title": "MaOs AI Agency — AI Automation Agency Ukraine | Telegram Bots & CRM",
+    "description": "AI agency Ukraine: AI automation agency for business. Telegram bot development, CRM automation, AI assistants for business. Turnkey AI systems for sales and support."
   },
   "nav": {
     "home": "Home",
     "services": "Services",
     "about": "About",
     "cta": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "menu": "Navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "badge": "AI Automation Agency",
@@ -24,6 +39,7 @@
       "custom": { "value": "100%", "label": "built for you" }
     },
     "scroll": "Explore more",
+    "scrollToStats": "Scroll to agency metrics",
     "floatingCards": {
       "crm": { "title": "CRM Sync", "subtitle": "auto-sync" },
       "aiReply": { "title": "AI Reply", "subtitle": "online" },
@@ -33,10 +49,276 @@
     }
   },
   "stats": {
+    "sectionTitle": "Agency metrics",
     "projects": "projects",
     "automations": "automations",
     "hours": "hours saved",
     "satisfaction": "happy clients"
+  },
+  "roiCalculator": {
+    "badge": "ROI Calculator",
+    "title": "AI automation ROI calculator",
+    "subtitle": "Estimate time and cost savings from automating repetitive work — with transparent formulas.",
+    "inputsTitle": "Your parameters",
+    "outputsTitle": "Estimated savings",
+    "disclaimer": "Indicative estimate for planning. Actual ROI depends on processes, integrations, and automation depth.",
+    "fields": {
+      "employees": "Number of employees",
+      "hoursPerWeek": "Hours on repetitive tasks per week",
+      "hourlyCost": "Average hourly cost",
+      "automationPercent": "Automation percentage"
+    },
+    "hints": {
+      "employees": "People who perform repetitive tasks",
+      "hoursPerWeek": "Per employee",
+      "hourlyCost": "Salary + overhead ÷ working hours",
+      "automationPercent": "Share of routine handled by AI (typically 40–70%)"
+    },
+    "outputs": {
+      "hoursMonth": "Hours saved per month",
+      "moneyMonth": "Money saved per month",
+      "moneyYear": "Money saved per year"
+    },
+    "units": {
+      "hours": "hrs",
+      "week": "wk",
+      "month": "mo"
+    },
+    "formulas": {
+      "title": "Calculation formulas",
+      "weeklyHours": "Weekly repetitive hours (team):",
+      "weeklySaved": "Hours saved per week:",
+      "monthlyHours": "Hours saved per month:",
+      "monthlyMoney": "Money saved per month:",
+      "yearlyMoney": "Money saved per year:",
+      "note": "Month ≈ week × {weeksPerMonth} (52÷12). Year = weekly savings × 52."
+    }
+  },
+  "aiAuditQuiz": {
+    "badge": "Free audit",
+    "title": "AI audit for your business",
+    "subtitle": "5 quick questions — get a personal report and automation ideas in 2 minutes.",
+    "panelTitle": "AI audit quiz",
+    "panelSubtitle": "Answer step by step — you can go back one step anytime.",
+    "progress": {
+      "step": "Step {current} of {total}",
+      "done": "Audit complete"
+    },
+    "actions": {
+      "next": "Next",
+      "back": "Back",
+      "finish": "Get my report"
+    },
+    "steps": {
+      "business": {
+        "title": "What type of business do you have?",
+        "subtitle": "Helps us match relevant automation scenarios."
+      },
+      "processes": {
+        "title": "What processes are repetitive?",
+        "subtitle": "Where your team spends the most repeatable time."
+      },
+      "leads": {
+        "title": "Where do you receive leads?",
+        "subtitle": "Channels where inquiries and applications arrive."
+      },
+      "crm": {
+        "title": "Do you use a CRM?",
+        "subtitle": "How you track deals, clients, and statuses today."
+      },
+      "automateFirst": {
+        "title": "What do you want to automate first?",
+        "subtitle": "Priority for the first implementation phase."
+      }
+    },
+    "options": {
+      "business": {
+        "ecommerce": "E-commerce / online store",
+        "services": "Services / consulting",
+        "agency": "Agency / studio",
+        "education": "Education / camps / courses",
+        "other": "Other"
+      },
+      "processes": {
+        "leads": "Lead handling & intake",
+        "support": "Customer support",
+        "sales": "Sales & follow-up",
+        "content": "Content & marketing",
+        "operations": "Operational tasks",
+        "data": "Reporting & data entry"
+      },
+      "leads": {
+        "telegram": "Telegram",
+        "instagram": "Instagram / social",
+        "website": "Website / forms",
+        "phone": "Phone / manual messengers",
+        "crm": "CRM directly",
+        "mixed": "Multiple channels"
+      },
+      "crm": {
+        "yesActive": "Yes, we actively use CRM",
+        "yesBasic": "Yes, but basic / not whole team",
+        "spreadsheet": "Spreadsheets (Excel / Google Sheets)",
+        "none": "No system yet"
+      },
+      "automateFirst": {
+        "leadCapture": "Lead capture & qualification",
+        "crmSync": "CRM & deal statuses",
+        "aiSupport": "AI customer support",
+        "content": "Content generation",
+        "salesAssistant": "AI sales assistant",
+        "reporting": "Reports & analytics"
+      }
+    },
+    "results": {
+      "badge": "Your report",
+      "title": "Short AI audit summary",
+      "readiness": "AI readiness",
+      "summaryTitle": "Summary",
+      "recommendationsTitle": "Recommended automations",
+      "ctaTitle": "Get a detailed plan on Telegram",
+      "ctaSubtitle": "We'll share process breakdown, priorities, and a turnkey estimate — free.",
+      "ctaButton": "Message on Telegram",
+      "ctaHandle": "Or directly: {handle}",
+      "restart": "Take the quiz again"
+    },
+    "summary": {
+      "business.ecommerce": "E-commerce with focus on fast lead handling and order status sync.",
+      "business.services": "Services business where fast replies and a clear lead-to-deal cycle matter.",
+      "business.agency": "Agency with high load on communication, content, and project coordination.",
+      "business.education": "Education vertical: registrations, participant support, and admin routines.",
+      "business.other": "Mixed-channel business — biggest upside is unifying routine into one AI flow.",
+      "process.leads": "Main bottleneck is lead handling: qualification, replies, CRM handoff.",
+      "process.support": "Routine is concentrated in support: repeat questions and escalations.",
+      "process.sales": "Sales needs systematic follow-up and AI nudges on deals.",
+      "process.content": "Content work is time-heavy — strong potential for batch generation.",
+      "process.operations": "Ops tasks are scattered across chats and sheets — one workflow needed.",
+      "process.data": "Reports and data entry are manual — automation delivers fast ROI.",
+      "leads.telegram": "Telegram is a key channel — bot + CRM will deliver the fastest impact.",
+      "leads.instagram": "Social channels need a bridge into one intake and reply funnel.",
+      "leads.website": "Website generates leads — connect forms to AI replies and CRM.",
+      "leads.phone": "Phone inquiries should land in CRM with AI notes after conversations.",
+      "leads.crm": "CRM is already central — next step: an AI layer on existing statuses.",
+      "leads.mixed": "Multiple channels — priority: single intake flow and status sync.",
+      "crm.yesActive": "CRM is in place — add AI automation without changing your stack.",
+      "crm.yesBasic": "CRM exists but underused — set up sync and reminders first.",
+      "crm.spreadsheet": "Spreadsheets limit scale — CRM migration + bot restores control.",
+      "crm.none": "No CRM yet — start with lead capture and a basic funnel in one system.",
+      "priority.leadCapture": "Priority: automate intake and the first response.",
+      "priority.crmSync": "Priority: CRM sync and a transparent pipeline for the team.",
+      "priority.aiSupport": "Priority: AI support with escalation to a human.",
+      "priority.content": "Priority: content system in your brand voice.",
+      "priority.salesAssistant": "Priority: AI assistant for sales and follow-up.",
+      "priority.reporting": "Priority: automated reports and dashboards from your data."
+    },
+    "recommendations": {
+      "telegramFunnel": {
+        "title": "Telegram lead funnel",
+        "description": "Bot captures leads 24/7, qualifies, answers FAQs, and hands warm chats to CRM."
+      },
+      "crmAutomation": {
+        "title": "Sales CRM automation",
+        "description": "Sync statuses, tasks, and reminders across Telegram, email, and CRM — no manual duplication."
+      },
+      "aiSupport": {
+        "title": "AI support assistant",
+        "description": "Handles routine tickets, drafts replies, and escalates complex cases with full context."
+      },
+      "contentAutomation": {
+        "title": "AI content system",
+        "description": "Generate posts, emails, and copy in your brand voice with an approval workflow."
+      },
+      "salesAssistant": {
+        "title": "AI sales assistant",
+        "description": "Lead scoring, script suggestions, and follow-up reminders at the right time."
+      },
+      "intakeWorkflow": {
+        "title": "Unified intake workflow",
+        "description": "Collects leads from all channels, classifies with AI, and routes to owners."
+      }
+    }
+  },
+  "voiceAiDemo": {
+    "badge": "Voice AI",
+    "title": "Voice AI assistant",
+    "subtitle": "Show clients what a voice AI assistant for business can look like.",
+    "previewLabel": "Demo interface",
+    "previewDescription": "Visual simulation only — tap the mic to run the scenario.",
+    "micLabel": "Simulate voice request",
+    "micHint": "Tap to start the demo",
+    "tryAgain": "Try again",
+    "states": {
+      "idle": "Ready for input",
+      "listening": "AI is listening",
+      "processing": "AI is processing",
+      "response": "Response ready"
+    },
+    "placeholder": {
+      "idle": "Tap the mic on the left — transcript and AI reply will appear here.",
+      "busy": "Processing voice request…"
+    },
+    "cards": {
+      "userLabel": "Customer",
+      "aiLabel": "AI assistant",
+      "actionLabel": "Next action"
+    },
+    "samples": {
+      "user": "\"I'd like to register my child for camp July 12–18. How much is that session?\"",
+      "ai": "Session July 12–18 is $485. Four spots left. Should I send the registration form on Telegram?",
+      "action": "Lead created in CRM · manager notified · draft reply queued in chat"
+    },
+    "features": {
+      "f1": "24/7 voice & chat",
+      "f2": "CRM + Telegram",
+      "f3": "Turnkey flows"
+    }
+  },
+  "aiSystemsBento": {
+    "badge": "AI Systems",
+    "title": "AI systems that replace routine work",
+    "subtitle": "From sales and CRM to Telegram, support, and analytics — one premium automation stack.",
+    "items": {
+      "salesAutomation": {
+        "tag": "Sales",
+        "title": "Sales automation",
+        "description": "AI handles dialogs, qualifies leads, nudges follow-ups, and suggests scripts for reps."
+      },
+      "crmIntegration": {
+        "tag": "CRM",
+        "title": "CRM integration",
+        "description": "Two-way sync of deals, statuses, and tasks — no manual duplication."
+      },
+      "telegramBots": {
+        "tag": "Telegram",
+        "title": "Telegram bots",
+        "description": "Bots for intake, registration, FAQs, and warm handoff to CRM 24/7."
+      },
+      "aiSupport": {
+        "tag": "Support",
+        "title": "AI support",
+        "description": "Resolves routine tickets, drafts replies, escalates complex cases with context."
+      },
+      "contentAutomation": {
+        "tag": "Content",
+        "title": "Content automation",
+        "description": "Posts, emails, and copy in your brand voice with approval workflow."
+      },
+      "analyticsDashboards": {
+        "tag": "Analytics",
+        "title": "Analytics dashboards",
+        "description": "Real-time lead, conversion, and ROI dashboards for leadership."
+      },
+      "apiIntegrations": {
+        "tag": "API",
+        "title": "API integrations",
+        "description": "Connect CRM, Telegram, spreadsheets, and internal services in one flow."
+      },
+      "leadProcessing": {
+        "tag": "Leads",
+        "title": "Lead processing",
+        "description": "Capture, score, and route inquiries from every channel automatically."
+      }
+    }
   },
   "features": {
     "title": "Why MaOs",
@@ -79,38 +361,220 @@
       "steps": ["Lead in", "AI classify", "CRM sync", "Notify"]
     }
   },
-  "flow": {
-    "badge": "Workflow",
-    "title": "How automation works",
-    "subtitle": "From lead to outcome — without manual routine",
+  "caseStudies": {
+    "badge": "Case Studies",
+    "title": "Solutions that already work",
+    "subtitle": "Four real MaOs cases — from camp registration bots to AI content automation for business.",
+    "viewCase": "View case",
+    "labels": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "result": "Result",
+      "technologies": "Technologies"
+    },
+    "items": {
+      "campBot": {
+        "category": "Telegram",
+        "title": "Telegram bot for camp registration",
+        "problem": "Registration ran through Google Forms and chats — applications were lost, payments weren't reconciled, and staff replied manually late into the night.",
+        "solution": "A Telegram bot guides users step by step: session, child details, payment, confirmation. Statuses sync to spreadsheets and CRM.",
+        "result": "70% less manual work for coordinators, 24/7 registration with zero lost applications, payments reconciled automatically.",
+        "technologies": ["Telegram Bot API", "Node.js", "Google Sheets", "LiqPay / Stripe"]
+      },
+      "crmSales": {
+        "category": "CRM",
+        "title": "CRM automation for the sales team",
+        "problem": "Reps duplicated deal statuses in CRM and messengers, follow-ups slipped, and weekly reports were built by hand.",
+        "solution": "Two-way sync of deals, tasks, and notifications across CRM, Telegram, and email. AI suggests the next step for every opportunity.",
+        "result": "Zero manual status sync, 60% less routine work, a real-time pipeline for leadership.",
+        "technologies": ["HubSpot", "Pipedrive", "Webhooks", "n8n", "OpenAI API"]
+      },
+      "aiSupport": {
+        "category": "Support AI",
+        "title": "AI assistant for customer support",
+        "problem": "Support was flooded with repeat questions, response times grew, and complex cases got lost in chats.",
+        "solution": "An AI assistant handles FAQs, classifies tickets, drafts replies, and escalates to humans with full conversation context.",
+        "result": "94% of routine queries resolved without an agent, first response under 1 minute, CSAT up 22%.",
+        "technologies": ["OpenAI API", "RAG", "Telegram", "Zendesk API", "PostgreSQL"]
+      },
+      "aiContent": {
+        "category": "Content AI",
+        "title": "AI content automation system",
+        "problem": "The team spent dozens of hours on posts, emails, and descriptions — brand voice drifted across channels.",
+        "solution": "A content engine generates batch assets in brand voice with approval workflow and calendar publishing.",
+        "result": "10× faster production, one brand voice across 5 channels, marketing focused on strategy.",
+        "technologies": ["GPT-4", "Notion API", "Buffer", "Custom prompts", "Airtable"]
+      }
+    }
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What clients say",
+    "subtitle": "Real feedback after launching AI automation — from Telegram bots to CRM and content systems.",
+    "ratingValue": "4.9",
+    "ratingLabel": "average rating",
+    "ratingNote": "Based on 50+ delivered projects and post-launch support",
+    "verified": "Verified",
+    "items": {
+      "novaRetail": {
+        "initials": "OK",
+        "name": "Olena Koval",
+        "role": "CEO, Nova Retail",
+        "company": "E-commerce · Telegram automation",
+        "highlight": "+38% Telegram leads in the first month",
+        "quote": "MaOs bot captures leads overnight, qualifies them, and hands warm chats to CRM. The team no longer misses a single inquiry."
+      },
+      "techFlow": {
+        "initials": "AM",
+        "name": "Andriy Melnyk",
+        "role": "Head of Sales, TechFlow",
+        "company": "B2B SaaS · CRM sync",
+        "quote": "Deal statuses sync automatically between HubSpot and Telegram. Routine work is gone — reps focus on closing."
+      },
+      "growthLab": {
+        "initials": "MS",
+        "name": "Maria Sydorenko",
+        "role": "Commercial Director, GrowthLab",
+        "company": "Agency · AI sales assistant",
+        "quote": "The AI assistant suggests scripts and nudges follow-ups. Demo-to-deal conversion grew without hiring more staff."
+      },
+      "mediaHub": {
+        "initials": "DV",
+        "name": "Dmytro Vlasenko",
+        "role": "Marketing Lead, MediaHub",
+        "company": "Media · AI content system",
+        "quote": "Content plans and posts ship in our brand voice. One approval workflow saves dozens of hours every week."
+      },
+      "scaleUp": {
+        "initials": "KP",
+        "name": "Kateryna Polishchuk",
+        "role": "COO, ScaleUp",
+        "company": "Services · End-to-end automation",
+        "quote": "From lead to CRM report — one flow with zero manual steps. Live in three weeks, support stays responsive."
+      },
+      "primeLog": {
+        "initials": "IG",
+        "name": "Ihor Hnatiuk",
+        "role": "Operations, PrimeLog",
+        "company": "Logistics · AI notifications",
+        "quote": "Client notifications and internal alerts run without failures. Uptime and response speed feel enterprise-grade."
+      }
+    }
+  },
+  "aiWorkflow": {
+    "badge": "Process",
+    "title": "How we build AI systems",
+    "subtitle": "From process audit to launch and support — a transparent turnkey pipeline.",
     "steps": {
-      "capture": {
-        "title": "Data capture",
-        "description": "Leads from website, Telegram, forms, and CRM enter a single pipeline."
+      "analysis": {
+        "title": "Business process analysis",
+        "description": "We map bottlenecks, routine work, and where AI delivers the highest impact.",
+        "tag": "Discovery"
       },
-      "process": {
-        "title": "AI processing",
-        "description": "Classification, replies, manager assignment, and status updates."
+      "design": {
+        "title": "AI system design",
+        "description": "Architecture, scenarios, model roles, and an integration plan for your stack.",
+        "tag": "Architecture"
       },
-      "action": {
-        "title": "Action",
-        "description": "Emails, messages, CRM tasks, and reports — automatically."
+      "mvp": {
+        "title": "MVP development",
+        "description": "A fast working prototype focused on your core business outcome.",
+        "tag": "Build"
       },
-      "insight": {
-        "title": "Analytics",
-        "description": "Dashboards, metrics, and recommendations to optimize processes."
+      "integrations": {
+        "title": "CRM / Telegram / API integrations",
+        "description": "We connect bots, CRM, spreadsheets, and internal services into one flow.",
+        "tag": "Connect"
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Scenario checks, load, security, and AI reply quality validation.",
+        "tag": "QA"
+      },
+      "launch": {
+        "title": "Launch & support",
+        "description": "Deploy, monitoring, model updates, and post-release care.",
+        "tag": "Launch"
       }
     }
   },
   "cta": {
     "title": "Ready to automate your business?",
-    "subtitle": "We'll discuss your processes and propose a turnkey solution.",
+    "subtitle": "Fill out the form — we'll reply with a plan and clear next steps.",
+    "point1": "Free consultation and process audit",
+    "point2": "Turnkey estimate within 24 hours",
+    "point3": "Or message us directly on Telegram",
     "button": "Message on Telegram"
+  },
+  "contactForm": {
+    "badge": "Contact",
+    "title": "Send a request",
+    "subtitle": "Tell us about your project — we'll reply on Telegram with a plan and next steps.",
+    "secure": "Secure",
+    "fields": {
+      "name": "Name",
+      "company": "Company",
+      "telegram": "Telegram username",
+      "projectType": "Project type",
+      "budget": "Budget range",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "company": "Company name (optional)",
+      "telegram": "@username",
+      "projectType": "Select project type",
+      "budget": "Select budget range",
+      "message": "Describe your task, workflows, CRM, integrations, and expected outcome…"
+    },
+    "projectTypes": {
+      "automation": "General automation",
+      "telegramBot": "Telegram bot",
+      "crm": "CRM automation",
+      "aiSales": "AI sales assistant",
+      "aiContent": "AI content system",
+      "aiSystem": "Full AI system",
+      "other": "Other"
+    },
+    "budgets": {
+      "under5k": "Under $5,000",
+      "5k_15k": "$5,000 – $15,000",
+      "15k_50k": "$15,000 – $50,000",
+      "50k_plus": "$50,000+",
+      "discuss": "Let's discuss on a call"
+    },
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "privacy": "By submitting, you agree we may contact you about your project.",
+    "orTelegram": "Or message us directly:",
+    "success": {
+      "title": "Request sent",
+      "description": "We received your request on Telegram and will reply shortly.",
+      "telegram": "Open Telegram",
+      "another": "Send another request"
+    },
+    "errors": {
+      "name_required": "Please enter your name.",
+      "name_too_long": "Name is too long.",
+      "company_too_long": "Company name is too long.",
+      "telegram_required": "Please enter your Telegram username.",
+      "telegram_invalid": "Invalid username (e.g. @maos_client).",
+      "telegram_too_long": "Username is too long.",
+      "project_type_required": "Please select a project type.",
+      "project_type_invalid": "Please select a type from the list.",
+      "budget_required": "Please select a budget range.",
+      "budget_invalid": "Please select a budget from the list.",
+      "message_required": "Please enter a message.",
+      "message_too_long": "Message is too long.",
+      "send_failed": "Could not send. Try again or message us on Telegram.",
+      "not_configured": "Form is temporarily unavailable. Please use Telegram.",
+      "network": "Network error. Check your connection and try again."
+    }
   },
   "servicesPage": {
     "meta": {
-      "title": "Services — MaOs AI Agency",
-      "description": "AI automation systems: chatbots, CRM, sales, integrations, and custom AI pipelines."
+      "title": "Services — Telegram Bot Development, CRM Automation | MaOs",
+      "description": "AI automation agency services: Telegram bot development, CRM automation, AI assistants for business, sales automation, content systems, and API integrations."
     },
     "hero": {
       "badge": "Services",
@@ -198,8 +662,8 @@
   },
   "aboutPage": {
     "meta": {
-      "title": "About & Contact — MaOs AI Agency",
-      "description": "MaOs AI Agency — premium AI automation agency for business."
+      "title": "About — AI Agency Ukraine | MaOs AI Agency",
+      "description": "MaOs AI Agency — AI automation agency in Ukraine. Telegram bots, CRM automation, AI assistants for business. Contact us on Telegram."
     },
     "hero": {
       "badge": "About & Contact",

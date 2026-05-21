@@ -1,4 +1,5 @@
 export { BrandLogo } from "./BrandLogo";
+export { PremiumCard } from "./PremiumCard";
 export { Container } from "./Container";
 export { GlowOrb } from "./GlowOrb";
 export { SectionHeading } from "./SectionHeading";
@@ -6,4 +7,5 @@ export { TelegramButton } from "./TelegramButton";
 export { FloatingTelegramButton } from "./FloatingTelegramButton";
 export { SocialLinks } from "./SocialLinks";
 export { MotionReveal, MotionStagger, MotionItem } from "./motion";
+export { Parallax, ParallaxSection, ParallaxScroll } from "./Parallax";
 export { CustomCursor } from "./CustomCursor";

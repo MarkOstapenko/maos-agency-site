@@ -1,26 +1,35 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { ParallaxScroll } from "@/components/ui/Parallax";
 
 export function HeroBackground() {
   const reduceMotion = useReducedMotion();
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-      <div className="red-glow-bg absolute inset-0 opacity-80" />
-      <div className="red-glow-spot absolute inset-0" />
-      <div className="gradient-mesh absolute inset-0 opacity-70" />
+      <ParallaxScroll speed="bg" className="absolute inset-0">
+        <div className="red-glow-bg absolute inset-0 opacity-80" />
+        <div className="red-glow-spot absolute inset-0" />
+      </ParallaxScroll>
+
+      <ParallaxScroll speed="slow" className="absolute inset-0">
+        <div className="gradient-mesh absolute inset-0 opacity-70" />
+      </ParallaxScroll>
+
       <div className="hero-vignette absolute inset-0" />
 
-      <div
-        className="grid-pattern absolute inset-0 opacity-20"
-        style={{
-          maskImage:
-            "radial-gradient(ellipse 80% 70% at 50% 40%, black 15%, transparent 70%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 80% 70% at 50% 40%, black 15%, transparent 70%)",
-        }}
-      />
+      <ParallaxScroll speed="medium" className="absolute inset-0">
+        <div
+          className="grid-pattern absolute inset-0 opacity-20"
+          style={{
+            maskImage:
+              "radial-gradient(ellipse 80% 70% at 50% 40%, black 15%, transparent 70%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 70% at 50% 40%, black 15%, transparent 70%)",
+          }}
+        />
+      </ParallaxScroll>
 
       <motion.div
         className="hero-beam absolute left-0 right-0 top-[38%] h-px"
@@ -28,7 +37,9 @@ export function HeroBackground() {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-primary/20 via-primary/8 to-transparent" />
+      <ParallaxScroll speed="subtle" className="absolute inset-0 flex justify-center">
+        <div className="h-full w-px bg-gradient-to-b from-primary/20 via-primary/8 to-transparent" />
+      </ParallaxScroll>
 
       {!reduceMotion && (
         <>

@@ -32,10 +32,20 @@
 | Variable | Required | Example |
 |----------|----------|---------|
 | `NEXT_PUBLIC_SITE_URL` | No | `https://maos-agency.vercel.app` |
+| `TELEGRAM_BOT_TOKEN` | For contact form | From [@BotFather](https://t.me/BotFather) |
+| `TELEGRAM_CHAT_ID` | For contact form | Your user or group chat ID |
 
 Set in: **Project → Settings → Environment Variables** → add for Production (and Preview if needed).
 
-Used for: `sitemap.xml`, `robots.txt`, Open Graph `metadataBase`.
+Used for: `sitemap.xml`, `robots.txt`, Open Graph `metadataBase`; contact form posts to Telegram via `POST /api/contact`.
+
+### Telegram bot setup (contact form)
+
+1. Create a bot with [@BotFather](https://t.me/BotFather) → copy **token**.
+2. Open a chat with your bot (or add the bot to a team group).
+3. Send any message to the bot.
+4. Open `https://api.telegram.org/bot<TOKEN>/getUpdates` and find `"chat":{"id":...}`.
+5. Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in Vercel (and locally in `.env.local` for testing).
 
 ## Routes
 
@@ -80,5 +90,6 @@ Follow prompts. Production: `vercel --prod`.
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to your Vercel domain
 - [ ] Test `/uk` and `/en` + language switcher
 - [ ] Test Telegram links
+- [ ] Test contact form (`TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` set)
 - [ ] Test mobile layout
 - [ ] Add custom domain in Vercel (optional)

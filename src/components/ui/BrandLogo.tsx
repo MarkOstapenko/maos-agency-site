@@ -19,7 +19,10 @@ export function BrandLogo({
       alt={BRAND.name}
       width={size}
       height={size}
+      sizes={`${size}px`}
       priority={priority}
+      loading={priority ? undefined : "lazy"}
+      fetchPriority={priority ? "high" : "auto"}
       className={cn("object-contain", className)}
     />
   );

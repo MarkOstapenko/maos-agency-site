@@ -2,7 +2,7 @@ import type { Variants } from "framer-motion";
 
 export const easeOut = [0.22, 1, 0.36, 1] as const;
 
-export const viewport = { once: true, margin: "-48px" as const };
+export const viewport = { once: true, margin: "-80px" as const };
 
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -37,16 +37,6 @@ export const staggerContainer: Variants = {
   },
 };
 
-/** @deprecated Use pageTransition */
-export const pageEnter: Variants = {
-  hidden: { opacity: 0, y: 6 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: easeOut },
-  },
-};
-
 export const pageTransition: Variants = {
   hidden: {
     opacity: 0,
@@ -70,6 +60,21 @@ export const pageTransition: Variants = {
       duration: 0.48,
       ease: easeOut,
     },
+  },
+};
+
+/** Lighter route transitions on small screens (no blur/scale). */
+export const pageTransitionMobile: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.38, ease: easeOut },
+  },
+  exit: {
+    opacity: 0,
+    y: -8,
+    transition: { duration: 0.28, ease: easeOut },
   },
 };
 

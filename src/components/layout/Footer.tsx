@@ -12,10 +12,11 @@ export async function Footer({ className }: { className?: string }) {
 
   return (
     <footer
+      role="contentinfo"
       className={`relative border-t border-white/5 bg-surface/90 backdrop-blur-sm ${className ?? ""}`}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto max-w-7xl py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 sm:py-20 lg:px-8">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <MotionReveal variant="fadeUp">
             <div>
@@ -56,7 +57,7 @@ export async function Footer({ className }: { className?: string }) {
                   <li key={key}>
                     <Link
                       href={key === "home" ? "/" : `/${key}`}
-                      className="text-sm font-medium text-muted transition-colors hover:text-off-white"
+                      className="inline-flex min-h-[44px] items-center text-sm font-medium text-muted transition-colors hover:text-off-white active:text-off-white"
                     >
                       {nav(key)}
                     </Link>

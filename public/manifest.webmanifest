@@ -1,13 +1,24 @@
 {
+  "id": "/",
   "name": "MaOs AI Agency",
   "short_name": "MaOs",
-  "description": "AI automation systems for business",
+  "description": "AI automation agency in Ukraine — Telegram bot development, CRM automation, AI assistants for business",
   "start_url": "/uk",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#050505",
   "theme_color": "#e32a39",
   "lang": "uk",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "technology"],
   "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/logo.png",
       "sizes": "512x512",
