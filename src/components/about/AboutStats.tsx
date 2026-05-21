@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
+import { cn } from "@/lib/utils";
 
 const statKeys = ["focus", "delivery", "support"] as const;
 
@@ -14,16 +15,23 @@ export function AboutStats() {
       <Container>
         <MotionStagger className="grid grid-cols-3 gap-3 sm:gap-6">
           {statKeys.map((key) => (
-            <MotionItem
-              key={key}
-              className="premium-stat px-2 py-4 sm:px-6 sm:py-6"
-            >
-              <p className="font-mono text-xl font-bold text-primary sm:text-3xl">
-                {t(`${key}.value`)}
-              </p>
-              <p className="mt-2 text-[10px] leading-tight text-muted sm:text-xs">
-                {t(`${key}.label`)}
-              </p>
+            <MotionItem key={key} className="h-full">
+              <article
+                className={cn(
+                  "stats-card group relative h-full text-center",
+                  key === "focus" && "stats-card-featured"
+                )}
+              >
+                <div className="stats-card-glow pointer-events-none" aria-hidden />
+                <div className="stats-card-edge pointer-events-none" aria-hidden />
+                <dl className="stats-card-inner relative items-center text-center">
+                  <dt className="sr-only">{t(`${key}.label`)}</dt>
+                  <dd className="stats-card-value m-0 font-mono tabular-nums">
+                    {t(`${key}.value`)}
+                  </dd>
+                  <dd className="stats-card-label mx-auto m-0">{t(`${key}.label`)}</dd>
+                </dl>
+              </article>
             </MotionItem>
           ))}
         </MotionStagger>

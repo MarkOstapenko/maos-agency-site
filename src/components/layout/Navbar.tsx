@@ -9,6 +9,7 @@ import { BRAND } from "@/lib/constants";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { IconButton } from "@/components/ui/IconButton";
 import { TelegramButton } from "@/components/ui/TelegramButton";
 import { NAV_LINKS } from "@/lib/nav-links";
 import { useLenis } from "./smooth-scroll";
@@ -78,17 +79,23 @@ export function Navbar() {
               <TelegramButton size="sm">{t("cta")}</TelegramButton>
             </div>
 
-            <button
+            <IconButton
               id={menuButtonId}
               type="button"
-              className="touch-target relative z-[51] flex shrink-0 items-center justify-center rounded-xl border border-white/8 bg-white/3 text-muted transition-colors hover:border-white/15 hover:text-off-white active:bg-white/6 lg:hidden"
+              size="md"
+              active={open}
+              className="touch-target relative z-[51] lg:hidden"
               onClick={toggleMenu}
-              aria-label={open ? t("closeMenu") : t("openMenu")}
+              label={open ? t("closeMenu") : t("openMenu")}
               aria-expanded={open}
               aria-controls="mobile-menu-dialog"
             >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
+              {open ? (
+                <X className="h-[18px] w-[18px]" strokeWidth={1.75} />
+              ) : (
+                <Menu className="h-[18px] w-[18px]" strokeWidth={1.75} />
+              )}
+            </IconButton>
           </div>
         </nav>
       </div>

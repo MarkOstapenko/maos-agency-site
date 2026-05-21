@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
+import { ArrowUpRight, Instagram } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SOCIAL_LINKS, type SocialId } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { IconButton } from "@/components/ui/IconButton";
 import { MotionStagger, MotionItem } from "@/components/ui/motion";
-import { tapScale } from "@/lib/motion";
+import { easeOut, tapScale } from "@/lib/motion";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -30,6 +31,57 @@ const iconMap: Record<SocialId, React.ComponentType<{ className?: string }>> = {
   threads: ThreadsIcon,
 };
 
+type SocialCardProps = {
+  id: SocialId;
+  href: string;
+  handle: string;
+  label: string;
+  index: number;
+};
+
+function SocialCard({ id, href, handle, label, index }: SocialCardProps) {
+  const Icon = iconMap[id];
+
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${label} (${handle}, opens in new tab)`}
+      whileTap={tapScale}
+      whileHover={{ y: -3 }}
+      transition={{ duration: 0.35, ease: easeOut }}
+      className={cn(
+        "social-card group relative flex h-full min-h-[5.5rem] flex-col sm:min-h-[6.25rem]",
+        index === 0 && "social-card-featured"
+      )}
+    >
+      <div className="social-card-glow pointer-events-none" aria-hidden />
+      <div className="social-card-edge pointer-events-none" aria-hidden />
+
+      <div className="social-card-inner relative flex flex-1 flex-col">
+        <div className="flex items-start justify-between gap-3">
+          <div className="social-card-icon flex shrink-0 items-center justify-center">
+            <Icon className="h-[1.125rem] w-[1.125rem] sm:h-5 sm:w-5" />
+          </div>
+          <ArrowUpRight
+            className="social-card-arrow h-4 w-4 shrink-0 text-white/20"
+            strokeWidth={1.75}
+            aria-hidden
+          />
+        </div>
+
+        <div className="social-card-copy mt-5 min-w-0 flex-1 sm:mt-6">
+          {label && (
+            <p className="social-card-platform">{label}</p>
+          )}
+          <p className="social-card-handle truncate">{handle}</p>
+        </div>
+      </div>
+    </motion.a>
+  );
+}
+
 type SocialLinksProps = {
   variant?: "inline" | "cards";
   className?: string;
@@ -45,57 +97,42 @@ export function SocialLinks({
 
   if (variant === "cards") {
     return (
-      <MotionStagger className={cn("grid gap-3 sm:grid-cols-3", className)}>
-        {SOCIAL_LINKS.map(({ id, href, handle }) => {
-          const Icon = iconMap[id];
-          return (
-            <MotionItem key={id}>
-              <motion.a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${t(id)} (${handle}, opens in new tab)`}
-                whileTap={tapScale}
-                className={cn(
-                  "premium-card premium-card-interactive group flex items-center gap-3 p-4"
-                )}
-              >
-                <div className="premium-card-glow pointer-events-none" aria-hidden />
-                <div className="premium-card-icon h-10 w-10 transition-transform duration-500 group-hover:rotate-3">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div className="min-w-0">
-                  {showLabels && (
-                    <p className="text-caption">{t(id)}</p>
-                  )}
-                  <p className="truncate text-sm font-medium text-off-white">{handle}</p>
-                </div>
-              </motion.a>
-            </MotionItem>
-          );
-        })}
+      <MotionStagger
+        className={cn(
+          "social-cards-grid grid gap-4 sm:grid-cols-3 sm:gap-5",
+          className
+        )}
+      >
+        {SOCIAL_LINKS.map(({ id, href, handle }, index) => (
+          <MotionItem key={id} className="h-full">
+            <SocialCard
+              id={id}
+              href={href}
+              handle={handle}
+              label={showLabels ? t(id) : ""}
+              index={index}
+            />
+          </MotionItem>
+        ))}
       </MotionStagger>
     );
   }
 
   return (
-    <div className={cn("flex flex-wrap items-center gap-3", className)}>
+    <div className={cn("flex flex-wrap items-center gap-3.5", className)}>
       {SOCIAL_LINKS.map(({ id, href }) => {
         const Icon = iconMap[id];
         return (
-          <motion.a
+          <IconButton
             key={id}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={t(id)}
-            title={t(id)}
-            whileHover={{ scale: 1.08, y: -3 }}
-            whileTap={tapScale}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-muted transition-colors hover:border-primary/30 hover:bg-primary/[0.06] hover:text-primary"
+            size="sm"
+            label={`${t(id)} (opens in new tab)`}
           >
-            <Icon className="h-[18px] w-[18px]" />
-          </motion.a>
+            <Icon className="h-[17px] w-[17px]" />
+          </IconButton>
         );
       })}
     </div>

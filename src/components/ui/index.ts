@@ -1,4 +1,5 @@
 export { BrandLogo } from "./BrandLogo";
+export { IconButton } from "./IconButton";
 export { PremiumCard } from "./PremiumCard";
 export { Container } from "./Container";
 export { GlowOrb } from "./GlowOrb";

@@ -124,7 +124,7 @@ export function AboutContact() {
           transition={{ delay: 0.22 }}
           className="mt-6 sm:mt-8"
         >
-          <h3 className="premium-label mb-5">{t("socialTitle")}</h3>
+          <h3 className="premium-label mb-6 sm:mb-7">{t("socialTitle")}</h3>
           <SocialLinks variant="cards" />
         </motion.div>
       </Container>

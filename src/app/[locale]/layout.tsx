@@ -6,7 +6,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { notFound } from "next/navigation";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Unbounded } from "next/font/google";
 
 import { routing } from "@/i18n/routing";
 
@@ -90,6 +90,14 @@ const geistSans = Geist({
   preload: true,
 });
 
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
+  subsets: ["latin", "cyrillic"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+  preload: true,
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin", "cyrillic"],
@@ -140,7 +148,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html lang={locale} className="dark">
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans`}
+        className={`${geistSans.variable} ${unbounded.variable} ${geistMono.variable} min-h-screen font-sans`}
       >
         <SkipLink />
 

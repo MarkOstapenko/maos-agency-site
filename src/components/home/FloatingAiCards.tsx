@@ -20,7 +20,10 @@ type CardConfig = {
   duration: number;
   yRange: number[];
   xRange?: number[];
+  featured?: boolean;
 };
+
+const SPARK_BARS = [36, 58, 44, 72, 52, 88, 64];
 
 const cards: CardConfig[] = [
   {
@@ -57,6 +60,7 @@ const cards: CardConfig[] = [
     duration: 6.5,
     yRange: [0, -16, 0],
     xRange: [0, 8, 0],
+    featured: true,
   },
   {
     id: "neural",
@@ -69,6 +73,23 @@ const cards: CardConfig[] = [
   },
 ];
 
+function AnalyticsSparkline() {
+  return (
+    <div
+      className="floating-ai-card-spark mt-3 flex h-7 items-end gap-[3px]"
+      aria-hidden
+    >
+      {SPARK_BARS.map((h, i) => (
+        <span
+          key={i}
+          className="floating-ai-card-spark-bar flex-1 rounded-[2px]"
+          style={{ height: `${h}%` }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function FloatingCard({
   id,
   icon: Icon,
@@ -77,13 +98,19 @@ function FloatingCard({
   duration,
   yRange,
   xRange = [0, 0, 0],
+  featured = false,
 }: CardConfig) {
   const t = useTranslations("hero.floatingCards");
+  const isAnalytics = id === "analytics";
 
   return (
     <motion.div
-      className={cn("absolute z-[5] w-[120px] min-[480px]:w-[140px] sm:w-[160px]", className)}
-      initial={{ opacity: 0, scale: 0.85 }}
+      className={cn(
+        "absolute z-[5]",
+        featured ? "w-[148px] min-[480px]:w-[172px] sm:w-[188px]" : "w-[132px] min-[480px]:w-[152px] sm:w-[168px]",
+        className
+      )}
+      initial={{ opacity: 0, scale: 0.92, y: 12 }}
       animate={{
         opacity: 1,
         scale: 1,
@@ -91,29 +118,45 @@ function FloatingCard({
         x: xRange,
       }}
       transition={{
-        opacity: { duration: 0.6, delay },
-        scale: { duration: 0.6, delay },
+        opacity: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
+        scale: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
         y: { duration, repeat: Infinity, ease: "easeInOut", delay },
         x: { duration: duration * 1.1, repeat: Infinity, ease: "easeInOut", delay },
       }}
     >
-      <div className="floating-ai-card group">
-        <div className="floating-ai-card-glow" />
-        <div className="relative flex items-start gap-3 p-3.5 sm:p-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/15 shadow-[0_0_20px_rgb(227_42_57/0.25)] transition-all group-hover:border-primary/50 group-hover:shadow-[0_0_28px_rgb(227_42_57/0.4)]">
-            <Icon className="h-5 w-5 text-primary" />
+      <div
+        className={cn(
+          "floating-ai-card group",
+          featured && "floating-ai-card-featured"
+        )}
+      >
+        <div className="floating-ai-card-glow" aria-hidden />
+        <div className="floating-ai-card-edge" aria-hidden />
+
+        <div className="floating-ai-card-inner relative">
+          <div className="flex items-center gap-3">
+            <div
+              className={cn(
+                "floating-ai-card-icon flex shrink-0 items-center justify-center",
+                isAnalytics && "floating-ai-card-icon-accent"
+              )}
+            >
+              <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} aria-hidden />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <p className="floating-ai-card-label">{t(`${id}.title`)}</p>
+              <p className="floating-ai-card-status mt-1">
+                <span
+                  className="floating-ai-card-live"
+                  aria-hidden
+                />
+                <span>{t(`${id}.subtitle`)}</span>
+              </p>
+            </div>
           </div>
-          <div className="min-w-0 pt-0.5">
-            <p className="truncate text-xs font-semibold text-off-white">
-              {t(`${id}.title`)}
-            </p>
-            <p className="mt-0.5 font-mono text-[10px] text-primary/90">
-              {t(`${id}.subtitle`)}
-            </p>
-          </div>
-        </div>
-        <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full border border-dark bg-primary/90">
-          <span className="h-1.5 w-1.5 rounded-full bg-off-white" />
+
+          {isAnalytics && <AnalyticsSparkline />}
         </div>
       </div>
     </motion.div>
