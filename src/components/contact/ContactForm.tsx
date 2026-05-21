@@ -178,19 +178,18 @@ export function ContactForm({ source = "contact-form", className }: ContactFormP
         className
       )}
     >
-      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/12 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-16 h-40 w-40 rounded-full bg-primary/6 blur-3xl" />
+      <div className="premium-card-glow pointer-events-none" aria-hidden />
+      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/8 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -left-16 h-40 w-40 rounded-full bg-primary/4 blur-3xl" />
 
-      <form onSubmit={handleSubmit} className="relative p-4 sm:p-8" noValidate>
-        <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
+      <form onSubmit={handleSubmit} className="card-pad relative" noValidate>
+        <div className="mb-5 flex flex-wrap items-start justify-between gap-4 sm:mb-6">
           <div>
-            <p className="premium-eyebrow text-primary/90">{t("badge")}</p>
-            <h3 className="mt-1 text-lg font-semibold tracking-tight text-off-white sm:text-xl">
-              {t("title")}
-            </h3>
-            <p className="text-body mt-1.5 max-w-md text-sm">{t("subtitle")}</p>
+            <p className="premium-eyebrow text-primary/80">{t("badge")}</p>
+            <h3 className="mt-1.5">{t("title")}</h3>
+            <p className="text-body mt-2 max-w-md">{t("subtitle")}</p>
           </div>
-          <span className="rounded-full border border-white/8 bg-white/3 px-3 py-1 font-mono text-[10px] text-muted">
+          <span className="premium-label rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 normal-case tracking-[0.1em]">
             {t("secure")}
           </span>
         </div>

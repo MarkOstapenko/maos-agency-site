@@ -66,11 +66,11 @@ export function BentoCard({
             >
               {t(`items.${cardKey}.title`)}
             </h3>
-            <p className="text-body mt-2 flex-1 text-sm leading-relaxed">
+            <p className="text-body mt-2.5 flex-1">
               {t(`items.${cardKey}.description`)}
             </p>
           </div>
-          <div className="border-t border-white/6 bg-black/25 p-4 sm:p-5">
+          <div className="border-t border-white/[0.05] bg-black/20 p-4 sm:p-5">
             <BentoPreview variant={preview} active={hovered} />
           </div>
         </div>

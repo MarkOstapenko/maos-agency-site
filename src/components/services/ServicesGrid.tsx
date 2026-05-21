@@ -37,10 +37,10 @@ export function ServicesGrid() {
         title={heading("gridTitle")}
         subtitle={heading("gridSubtitle")}
         align="left"
-        className="mb-14 sm:mb-16"
+        className="section-head"
       />
 
-      <MotionStagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+      <MotionStagger className="section-grid sm:grid-cols-2 lg:grid-cols-3">
         {serviceKeys.map((key, i) => {
           const Icon = icons[i];
           const tags = t.raw(`${key}.tags`) as string[];

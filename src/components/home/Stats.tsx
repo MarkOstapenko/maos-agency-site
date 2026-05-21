@@ -57,7 +57,7 @@ export function Stats() {
       <div className="stats-section-glow pointer-events-none absolute inset-0" aria-hidden />
 
       <Container className="relative">
-        <div className="stats-section-header mx-auto mb-8 max-w-lg text-center sm:mb-10 lg:mb-12">
+        <div className="stats-section-header section-head mx-auto max-w-lg text-center">
           <p className="premium-eyebrow text-primary/75">{t("sectionTitle")}</p>
           <h2 id="stats-heading" className="sr-only">
             {t("sectionTitle")}

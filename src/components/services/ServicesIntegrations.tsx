@@ -17,7 +17,7 @@ export function ServicesIntegrations() {
         <SectionHeading
           title={t("title")}
           subtitle={t("subtitle")}
-          className="mb-12"
+          className="section-head"
         />
 
         <MotionStagger className="flex flex-wrap justify-center gap-3">

@@ -1,9 +1,14 @@
 import { getTranslations } from "next-intl/server";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { BRAND } from "@/lib/constants";
+import { BrandLogo } from "@/components/ui/BrandLogo";
+import { Container } from "@/components/ui/Container";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MotionReveal } from "@/components/ui/motion";
+
+const navKeys = ["home", "services", "about"] as const;
 
 export async function Footer({ className }: { className?: string }) {
   const t = await getTranslations("footer");
@@ -13,51 +18,56 @@ export async function Footer({ className }: { className?: string }) {
   return (
     <footer
       role="contentinfo"
-      className={`relative border-t border-white/5 bg-surface/90 backdrop-blur-sm ${className ?? ""}`}
+      className={`site-footer relative ${className ?? ""}`}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
-      <div className="mx-auto max-w-7xl py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 sm:py-20 lg:px-8">
-        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
-          <MotionReveal variant="fadeUp">
-            <div>
-              <p className="text-xl font-semibold tracking-tight text-off-white">
-                {BRAND.name}
-              </p>
-              <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
-                {t("tagline")}
-              </p>
-              <a
-                href={BRAND.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-80"
-              >
-                {t("telegram")}
-              </a>
-              <div className="mt-8">
-                <p className="premium-label mb-4">{t("social")}</p>
-                <SocialLinks />
+      <div className="site-footer-ambient pointer-events-none" aria-hidden />
+      <div className="site-footer-topline pointer-events-none" aria-hidden />
+
+      <Container className="relative">
+        <div className="site-footer-grid">
+          <MotionReveal variant="fadeUp" className="site-footer-primary">
+            <div className="site-footer-brand">
+              <Link href="/" className="brand-logo-mark-wrap inline-flex" aria-label={BRAND.name}>
+                <BrandLogo size={44} className="h-11 w-11" />
+              </Link>
+              <p className="site-footer-logo mt-4">{BRAND.name}</p>
+              <p className="site-footer-tagline">{t("tagline")}</p>
+            </div>
+
+            <div className="site-footer-cta">
+              <span className="site-footer-cta-glow pointer-events-none" aria-hidden />
+              <span className="site-footer-cta-edge pointer-events-none" aria-hidden />
+              <div className="site-footer-cta-inner">
+                <p className="premium-eyebrow text-primary/80">{t("ctaEyebrow")}</p>
+                <h2 className="site-footer-cta-title">{t("ctaTitle")}</h2>
+                <p className="site-footer-cta-sub">{t("ctaSubtitle")}</p>
+                <a
+                  href={BRAND.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-premium btn-shine site-footer-cta-btn mt-6 inline-flex w-full items-center justify-center gap-2 sm:mt-7 sm:w-auto"
+                >
+                  <MessageCircle className="h-4 w-4 shrink-0" aria-hidden />
+                  {t("ctaButton")}
+                  <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+                </a>
               </div>
             </div>
           </MotionReveal>
 
           <MotionReveal
             variant="fadeUp"
-            delay={0.1}
-            className="flex flex-col gap-10 sm:flex-row sm:gap-20 md:flex-col md:gap-10"
+            delay={0.08}
+            className="site-footer-secondary"
           >
-            <div>
-              <p className="premium-label mb-4">{nav("language")}</p>
-              <LanguageSwitcher />
-            </div>
-            <div>
-              <p className="premium-label mb-4">{t("menu")}</p>
-              <ul className="space-y-3">
-                {(["home", "services", "about"] as const).map((key) => (
+            <div className="site-footer-col">
+              <p className="site-footer-col-label">{t("menu")}</p>
+              <ul className="site-footer-nav">
+                {navKeys.map((key) => (
                   <li key={key}>
                     <Link
                       href={key === "home" ? "/" : `/${key}`}
-                      className="inline-flex min-h-[44px] items-center text-sm font-medium text-muted transition-colors hover:text-off-white active:text-off-white"
+                      className="site-footer-nav-link"
                     >
                       {nav(key)}
                     </Link>
@@ -65,16 +75,45 @@ export async function Footer({ className }: { className?: string }) {
                 ))}
               </ul>
             </div>
+
+            <div className="site-footer-col site-footer-col-divider">
+              <p className="site-footer-col-label">{nav("language")}</p>
+              <LanguageSwitcher />
+            </div>
           </MotionReveal>
         </div>
 
-        <MotionReveal variant="fadeIn" delay={0.2}>
-          <div className="premium-divider mt-12" />
-          <p className="mt-6 text-center text-xs text-subtle sm:text-left">
-            © {year} {BRAND.name}. {t("rights")}
-          </p>
+        <div className="site-footer-divider" aria-hidden />
+
+        <MotionReveal variant="fadeIn" delay={0.12}>
+          <div className="site-footer-social">
+            <div className="site-footer-social-copy">
+              <p className="site-footer-col-label">{t("social")}</p>
+              <p className="site-footer-social-hint">{t("socialHint")}</p>
+            </div>
+            <SocialLinks variant="footer" />
+          </div>
         </MotionReveal>
-      </div>
+
+        <div className="site-footer-divider" aria-hidden />
+
+        <MotionReveal variant="fadeIn" delay={0.16}>
+          <div className="site-footer-bar">
+            <p className="site-footer-copy">
+              © {year} {BRAND.name}. {t("rights")}
+            </p>
+            <a
+              href={BRAND.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="site-footer-telegram"
+            >
+              {t("telegram")}
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+            </a>
+          </div>
+        </MotionReveal>
+      </Container>
     </footer>
   );
 }

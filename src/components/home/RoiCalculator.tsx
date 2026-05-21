@@ -74,7 +74,7 @@ export function RoiCalculator() {
       </ParallaxScroll>
 
       <Container className="relative">
-        <Parallax speed="subtle" className="mb-12 sm:mb-14">
+        <Parallax speed="subtle" className="section-head">
           <SectionHeading
             badge={t("badge")}
             title={t("title")}
@@ -82,7 +82,7 @@ export function RoiCalculator() {
           />
         </Parallax>
 
-        <MotionStagger className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+        <MotionStagger className="section-grid lg:grid-cols-2">
           <MotionItem>
             <PremiumCard as="section" className="h-full">
               <div className="card-pad">

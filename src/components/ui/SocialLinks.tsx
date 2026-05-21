@@ -83,7 +83,7 @@ function SocialCard({ id, href, handle, label, index }: SocialCardProps) {
 }
 
 type SocialLinksProps = {
-  variant?: "inline" | "cards";
+  variant?: "inline" | "cards" | "footer";
   className?: string;
   showLabels?: boolean;
 };
@@ -94,6 +94,33 @@ export function SocialLinks({
   showLabels = true,
 }: SocialLinksProps) {
   const t = useTranslations("social");
+
+  if (variant === "footer") {
+    return (
+      <div className={cn("footer-social-rail", className)}>
+        {SOCIAL_LINKS.map(({ id, href }, index) => {
+          const Icon = iconMap[id];
+          return (
+            <span key={id} className="contents">
+              {index > 0 && (
+                <span className="footer-social-sep" aria-hidden />
+              )}
+              <IconButton
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="md"
+                className="footer-social-btn"
+                label={`${t(id)} (opens in new tab)`}
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </IconButton>
+            </span>
+          );
+        })}
+      </div>
+    );
+  }
 
   if (variant === "cards") {
     return (

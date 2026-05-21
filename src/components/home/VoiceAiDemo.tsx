@@ -62,7 +62,7 @@ export function VoiceAiDemo() {
       </ParallaxScroll>
 
       <Container className="relative">
-        <Parallax speed="subtle" className="mb-10 sm:mb-12">
+        <Parallax speed="subtle" className="section-head">
           <SectionHeading badge={t("badge")} title={t("title")} subtitle={t("subtitle")} />
         </Parallax>
 

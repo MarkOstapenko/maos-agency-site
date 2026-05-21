@@ -88,7 +88,7 @@ export function AiSystemsBento() {
       </ParallaxScroll>
 
       <Container className="relative">
-        <Parallax speed="subtle" className="mb-12 sm:mb-14">
+        <Parallax speed="subtle" className="section-head">
           <SectionHeading badge={t("badge")} title={t("title")} subtitle={t("subtitle")} />
         </Parallax>
 

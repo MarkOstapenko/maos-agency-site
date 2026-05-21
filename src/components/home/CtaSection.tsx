@@ -23,18 +23,18 @@ export function CtaSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-64px" }}
           variants={scaleIn}
-          className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10"
+          className="section-grid lg:grid-cols-2 lg:items-start"
         >
           <Parallax speed="slow">
             <div className="premium-card premium-card-interactive cta-panel glow-red group relative flex flex-col justify-center lg:sticky lg:top-28">
               <div className="premium-card-glow pointer-events-none" aria-hidden />
-              <div className="relative px-6 py-10 sm:px-10 sm:py-12">
+              <div className="relative">
                 <h2 className="text-display-sm">{t("title")}</h2>
-                <div className="premium-divider mt-6 max-w-[8rem]" />
-                <p className="text-body-lg mt-6 max-w-md">{t("subtitle")}</p>
-                <ul className="mt-8 space-y-3">
+                <div className="premium-divider mt-5 max-w-[7rem]" />
+                <p className="text-body-lg mt-5 max-w-md">{t("subtitle")}</p>
+                <ul className="mt-6 space-y-2.5">
                   {(["point1", "point2", "point3"] as const).map((key) => (
-                    <li key={key} className="text-body flex items-start gap-2 text-sm">
+                    <li key={key} className="text-body flex items-start gap-2.5 text-sm">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                       {t(key)}
                     </li>

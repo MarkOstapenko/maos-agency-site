@@ -28,40 +28,39 @@ export function Testimonials() {
 
   return (
     <ParallaxSection className="section-y section-defer relative overflow-hidden">
-      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0 opacity-60">
+      <ParallaxScroll speed="slow" className="pointer-events-none absolute inset-0 opacity-40">
         <div className="red-glow-spot absolute inset-0" />
       </ParallaxScroll>
+
       <Container className="relative">
-        <Parallax speed="subtle" className="mb-10 sm:mb-12">
+        <Parallax speed="subtle" className="section-head">
           <SectionHeading badge={t("badge")} title={t("title")} subtitle={t("subtitle")} />
         </Parallax>
 
-        <Parallax speed="fast">
-          <MotionReveal className="mx-auto mb-10 max-w-xl sm:mb-14">
-            <div className="testimonial-rating-panel premium-card premium-card-featured flex flex-col items-center gap-4 card-pad sm:flex-row sm:justify-between">
-          <div className="flex items-baseline gap-3">
-            <motion.span
-              className="font-mono text-4xl font-semibold tracking-tight text-primary sm:text-5xl"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {t("ratingValue")}
-            </motion.span>
-            <div className="text-left">
-              <TestimonialStars active className="mb-1" />
-              <p className="text-caption">{t("ratingLabel")}</p>
+        <MotionReveal className="section-head">
+          <div className="testimonial-rating mx-auto flex max-w-lg flex-col items-center gap-4 text-center sm:flex-row sm:justify-center sm:gap-10 sm:text-left">
+            <div className="flex items-baseline gap-3">
+              <motion.span
+                className="testimonial-rating-value font-mono tabular-nums"
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                {t("ratingValue")}
+              </motion.span>
+              <div>
+                <TestimonialStars className="mb-1.5 justify-center sm:justify-start" />
+                <p className="text-caption text-muted">{t("ratingLabel")}</p>
+              </div>
             </div>
+            <p className="text-caption max-w-[16rem] text-subtle sm:max-w-[11rem]">
+              {t("ratingNote")}
+            </p>
           </div>
-          <p className="text-body text-center text-sm sm:max-w-[12rem] sm:text-right">
-            {t("ratingNote")}
-          </p>
-            </div>
         </MotionReveal>
-        </Parallax>
 
-        <MotionStagger className="grid gap-5 sm:gap-6 lg:grid-cols-2">
+        <MotionStagger className="section-grid lg:grid-cols-2">
           {testimonials.map((item, i) => (
             <Parallax key={item.key} speed={cardSpeeds[i]}>
               <TestimonialCard

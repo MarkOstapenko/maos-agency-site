@@ -17,9 +17,9 @@ export function AboutValues() {
     <section className="section-band section-y relative">
       <div className="red-glow-spot pointer-events-none absolute inset-0" />
       <Container className="relative">
-        <SectionHeading title={t("title")} className="mb-14 sm:mb-16" />
+        <SectionHeading title={t("title")} className="section-head" />
 
-        <MotionStagger className="grid gap-5 sm:gap-6 md:grid-cols-3">
+        <MotionStagger className="section-grid md:grid-cols-3">
           {valueKeys.map((key, i) => {
             const Icon = valueIcons[i];
             return (

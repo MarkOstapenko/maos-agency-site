@@ -183,33 +183,43 @@
       "restart": "Take the quiz again"
     },
     "summary": {
-      "business.ecommerce": "E-commerce with focus on fast lead handling and order status sync.",
-      "business.services": "Services business where fast replies and a clear lead-to-deal cycle matter.",
-      "business.agency": "Agency with high load on communication, content, and project coordination.",
-      "business.education": "Education vertical: registrations, participant support, and admin routines.",
-      "business.other": "Mixed-channel business — biggest upside is unifying routine into one AI flow.",
-      "process.leads": "Main bottleneck is lead handling: qualification, replies, CRM handoff.",
-      "process.support": "Routine is concentrated in support: repeat questions and escalations.",
-      "process.sales": "Sales needs systematic follow-up and AI nudges on deals.",
-      "process.content": "Content work is time-heavy — strong potential for batch generation.",
-      "process.operations": "Ops tasks are scattered across chats and sheets — one workflow needed.",
-      "process.data": "Reports and data entry are manual — automation delivers fast ROI.",
-      "leads.telegram": "Telegram is a key channel — bot + CRM will deliver the fastest impact.",
-      "leads.instagram": "Social channels need a bridge into one intake and reply funnel.",
-      "leads.website": "Website generates leads — connect forms to AI replies and CRM.",
-      "leads.phone": "Phone inquiries should land in CRM with AI notes after conversations.",
-      "leads.crm": "CRM is already central — next step: an AI layer on existing statuses.",
-      "leads.mixed": "Multiple channels — priority: single intake flow and status sync.",
-      "crm.yesActive": "CRM is in place — add AI automation without changing your stack.",
-      "crm.yesBasic": "CRM exists but underused — set up sync and reminders first.",
-      "crm.spreadsheet": "Spreadsheets limit scale — CRM migration + bot restores control.",
-      "crm.none": "No CRM yet — start with lead capture and a basic funnel in one system.",
-      "priority.leadCapture": "Priority: automate intake and the first response.",
-      "priority.crmSync": "Priority: CRM sync and a transparent pipeline for the team.",
-      "priority.aiSupport": "Priority: AI support with escalation to a human.",
-      "priority.content": "Priority: content system in your brand voice.",
-      "priority.salesAssistant": "Priority: AI assistant for sales and follow-up.",
-      "priority.reporting": "Priority: automated reports and dashboards from your data."
+      "business": {
+        "ecommerce": "E-commerce with focus on fast lead handling and order status sync.",
+        "services": "Services business where fast replies and a clear lead-to-deal cycle matter.",
+        "agency": "Agency with high load on communication, content, and project coordination.",
+        "education": "Education vertical: registrations, participant support, and admin routines.",
+        "other": "Mixed-channel business — biggest upside is unifying routine into one AI flow."
+      },
+      "process": {
+        "leads": "Main bottleneck is lead handling: qualification, replies, CRM handoff.",
+        "support": "Routine is concentrated in support: repeat questions and escalations.",
+        "sales": "Sales needs systematic follow-up and AI nudges on deals.",
+        "content": "Content work is time-heavy — strong potential for batch generation.",
+        "operations": "Ops tasks are scattered across chats and sheets — one workflow needed.",
+        "data": "Reports and data entry are manual — automation delivers fast ROI."
+      },
+      "leads": {
+        "telegram": "Telegram is a key channel — bot + CRM will deliver the fastest impact.",
+        "instagram": "Social channels need a bridge into one intake and reply funnel.",
+        "website": "Website generates leads — connect forms to AI replies and CRM.",
+        "phone": "Phone inquiries should land in CRM with AI notes after conversations.",
+        "crm": "CRM is already central — next step: an AI layer on existing statuses.",
+        "mixed": "Multiple channels — priority: single intake flow and status sync."
+      },
+      "crm": {
+        "yesActive": "CRM is in place — add AI automation without changing your stack.",
+        "yesBasic": "CRM exists but underused — set up sync and reminders first.",
+        "spreadsheet": "Spreadsheets limit scale — CRM migration + bot restores control.",
+        "none": "No CRM yet — start with lead capture and a basic funnel in one system."
+      },
+      "priority": {
+        "leadCapture": "Priority: automate intake and the first response.",
+        "crmSync": "Priority: CRM sync and a transparent pipeline for the team.",
+        "aiSupport": "Priority: AI support with escalation to a human.",
+        "content": "Priority: content system in your brand voice.",
+        "salesAssistant": "Priority: AI assistant for sales and follow-up.",
+        "reporting": "Priority: automated reports and dashboards from your data."
+      }
     },
     "recommendations": {
       "telegramFunnel": {
@@ -410,54 +420,53 @@
   "testimonials": {
     "badge": "Testimonials",
     "title": "What clients say",
-    "subtitle": "Real feedback after launching AI automation — from Telegram bots to CRM and content systems.",
+    "subtitle": "Feedback after AI launch — Telegram, CRM, content.",
     "ratingValue": "4.9",
     "ratingLabel": "average rating",
-    "ratingNote": "Based on 50+ delivered projects and post-launch support",
-    "verified": "Verified",
+    "ratingNote": "50+ projects · post-launch support",
     "items": {
       "novaRetail": {
         "initials": "OK",
         "name": "Olena Koval",
         "role": "CEO, Nova Retail",
-        "company": "E-commerce · Telegram automation",
-        "highlight": "+38% Telegram leads in the first month",
-        "quote": "MaOs bot captures leads overnight, qualifies them, and hands warm chats to CRM. The team no longer misses a single inquiry."
+        "company": "E-commerce",
+        "highlight": "+38% Telegram leads in month one",
+        "quote": "The bot captures leads overnight and sends warm handoffs to CRM. No missed inquiries."
       },
       "techFlow": {
         "initials": "AM",
         "name": "Andriy Melnyk",
-        "role": "Head of Sales, TechFlow",
-        "company": "B2B SaaS · CRM sync",
-        "quote": "Deal statuses sync automatically between HubSpot and Telegram. Routine work is gone — reps focus on closing."
+        "role": "Head of Sales",
+        "company": "TechFlow · CRM sync",
+        "quote": "Deal statuses sync between HubSpot and Telegram. Reps close deals, not update CRM."
       },
       "growthLab": {
         "initials": "MS",
         "name": "Maria Sydorenko",
-        "role": "Commercial Director, GrowthLab",
-        "company": "Agency · AI sales assistant",
-        "quote": "The AI assistant suggests scripts and nudges follow-ups. Demo-to-deal conversion grew without hiring more staff."
+        "role": "Commercial Director",
+        "company": "GrowthLab · AI sales",
+        "quote": "AI suggests scripts and nudges follow-ups. Conversion grew without new hires."
       },
       "mediaHub": {
         "initials": "DV",
         "name": "Dmytro Vlasenko",
-        "role": "Marketing Lead, MediaHub",
-        "company": "Media · AI content system",
-        "quote": "Content plans and posts ship in our brand voice. One approval workflow saves dozens of hours every week."
+        "role": "Marketing Lead",
+        "company": "MediaHub · content",
+        "quote": "Posts ship in our brand voice. One workflow saves hours every week."
       },
       "scaleUp": {
         "initials": "KP",
         "name": "Kateryna Polishchuk",
-        "role": "COO, ScaleUp",
-        "company": "Services · End-to-end automation",
-        "quote": "From lead to CRM report — one flow with zero manual steps. Live in three weeks, support stays responsive."
+        "role": "COO",
+        "company": "ScaleUp · automation",
+        "quote": "From lead to report — one flow. Live in three weeks."
       },
       "primeLog": {
         "initials": "IG",
         "name": "Ihor Hnatiuk",
-        "role": "Operations, PrimeLog",
-        "company": "Logistics · AI notifications",
-        "quote": "Client notifications and internal alerts run without failures. Uptime and response speed feel enterprise-grade."
+        "role": "Operations",
+        "company": "PrimeLog · notifications",
+        "quote": "Alerts run without failures. Response speed feels enterprise-grade."
       }
     }
   },
@@ -736,6 +745,11 @@
     "rights": "All rights reserved.",
     "telegram": "@MaOs_Agency",
     "social": "Social",
-    "menu": "Menu"
+    "socialHint": "Follow our builds and case drops",
+    "menu": "Menu",
+    "ctaEyebrow": "Next step",
+    "ctaTitle": "Start your AI automation",
+    "ctaSubtitle": "Free audit and a turnkey plan in Telegram — reply within 24 hours.",
+    "ctaButton": "Message on Telegram"
   }
 }

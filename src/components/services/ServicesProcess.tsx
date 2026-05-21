@@ -17,12 +17,12 @@ export function ServicesProcess() {
     <section className="section-y relative overflow-hidden border-y border-white/[0.05] bg-black">
       <div className="red-glow-spot pointer-events-none absolute inset-0" />
       <Container className="relative">
-        <SectionHeading title={t("title")} subtitle={t("subtitle")} className="mb-14 sm:mb-16" />
+        <SectionHeading title={t("title")} subtitle={t("subtitle")} className="section-head" />
 
         <div className="relative">
           <div className="pointer-events-none absolute left-0 right-0 top-1/2 hidden h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent lg:block" />
 
-          <MotionStagger className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <MotionStagger className="section-grid md:grid-cols-2 lg:grid-cols-4">
             {stepKeys.map((key, i) => {
               const Icon = stepIcons[i];
               return (

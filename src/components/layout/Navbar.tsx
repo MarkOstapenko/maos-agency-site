@@ -50,13 +50,17 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top,0px)]">
       <div className="mx-auto max-w-7xl px-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 lg:px-8">
         <nav className="premium-nav mt-3 flex items-center justify-between gap-2 sm:mt-5 sm:gap-3">
-          <Link href="/" className="group flex min-w-0 max-w-[62%] items-center gap-2 sm:max-w-none">
+          <Link
+            href="/"
+            className="group flex min-w-0 max-w-[62%] items-center gap-2.5 sm:max-w-none sm:gap-3"
+            aria-label={BRAND.name}
+          >
             <motion.span
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
-              className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/8 bg-black/40 p-1"
+              className="brand-logo-mark-wrap shrink-0"
             >
-              <BrandLogo size={28} priority />
+              <BrandLogo size={32} priority />
             </motion.span>
             <span className="truncate text-sm font-medium tracking-tight text-off-white max-[359px]:text-[13px]">
               {BRAND.name}

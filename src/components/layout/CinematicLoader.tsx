@@ -152,19 +152,21 @@ export function CinematicLoader() {
 
           <div className="relative z-10 flex flex-col items-center px-6 text-center">
             <motion.div
-              className="cinematic-loader-ring relative flex h-24 w-24 items-center justify-center sm:h-28 sm:w-28"
-              initial={{ opacity: 0, scale: 0.88 }}
+              className="cinematic-loader-brand"
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: easeOut }}
             >
-              <div className="cinematic-loader-ring-orbit absolute inset-0 rounded-full border border-dashed border-primary/25" />
-              <div className="cinematic-loader-ring-pulse absolute inset-2 rounded-full border border-primary/30" />
+              <div
+                className="cinematic-loader-brand-orbit pointer-events-none absolute inset-0"
+                aria-hidden
+              />
               <motion.div
-                className="cinematic-loader-logo-glow relative z-10"
-                animate={{ scale: [1, 1.03, 1] }}
+                className="brand-logo-mark-wrap cinematic-loader-brand-mark"
+                animate={{ scale: [1, 1.04, 1] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <BrandLogo size={52} className="sm:h-14 sm:w-14" priority />
+                <BrandLogo size={64} priority className="h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]" />
               </motion.div>
             </motion.div>
 

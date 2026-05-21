@@ -22,7 +22,7 @@ export function AboutContact() {
         <SectionHeading
           title={t("title")}
           subtitle={t("subtitle")}
-          className="mb-14 sm:mb-16"
+          className="section-head"
         />
 
         <div className="grid gap-5 sm:gap-6 lg:grid-cols-5 lg:gap-8">

@@ -28,13 +28,13 @@ export function SectionHeading({
       viewport={{ once: true, margin: "-64px" }}
       transition={{ duration: 0.55, ease: easeOut }}
       className={cn(
-        "max-w-2xl",
+        "section-heading max-w-2xl",
         align === "center" && "mx-auto text-center",
         className
       )}
     >
       {badge && (
-        <span className="premium-badge premium-eyebrow mb-6 inline-flex sm:mb-7">
+        <span className="premium-badge premium-eyebrow mb-5 inline-flex sm:mb-6">
           {badge}
         </span>
       )}
@@ -43,11 +43,18 @@ export function SectionHeading({
         <>
           <div
             className={cn(
-              "premium-divider mt-6 sm:mt-7",
-              align === "center" ? "mx-auto max-w-[8rem]" : "max-w-[10rem]"
+              "premium-divider mt-5 sm:mt-6",
+              align === "center" ? "mx-auto max-w-[7rem]" : "max-w-[9rem]"
             )}
           />
-          <p className="text-body-lg mt-6 max-w-xl sm:mt-7">{subtitle}</p>
+          <p
+            className={cn(
+              "text-body-lg mt-5 sm:mt-6",
+              align === "center" ? "mx-auto max-w-xl" : "max-w-lg"
+            )}
+          >
+            {subtitle}
+          </p>
         </>
       )}
     </motion.div>

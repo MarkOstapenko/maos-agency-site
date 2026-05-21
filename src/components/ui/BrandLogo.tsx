@@ -8,6 +8,7 @@ type BrandLogoProps = {
   priority?: boolean;
 };
 
+/** Transparent MaOs mark — no background container */
 export function BrandLogo({
   size = 36,
   className,
@@ -23,7 +24,9 @@ export function BrandLogo({
       priority={priority}
       loading={priority ? undefined : "lazy"}
       fetchPriority={priority ? "high" : "auto"}
-      className={cn("object-contain", className)}
+      quality={100}
+      className={cn("brand-logo-mark", className)}
+      style={{ width: size, height: size }}
     />
   );
 }
